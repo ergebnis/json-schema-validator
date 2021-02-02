@@ -6,4 +6,9 @@
       <code>$decoded</code>
     </MixedAssignment>
   </file>
+  <file src="test/Unit/SchemaTest.php">
+    <MixedAssignment occurrences="1">
+      <code>$decoded</code>
+    </MixedAssignment>
+  </file>
 </files>
