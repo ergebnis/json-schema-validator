@@ -89,7 +89,7 @@ repository:
   has_projects: false
   has_wiki: false
   name: "json-schema-validator"
-  private: true
+  private: false
 
   # https://docs.github.com/en/rest/reference/repos#replace-all-repository-topics
 
