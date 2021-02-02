@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`dcd4cfb...main`][dcd4cfb...main].
+For a full diff see [`1.0.0...main`][1.0.0...main].
+
+## [`1.0.0`][1.0.0]
+
+For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 
 ### Added
 
@@ -16,7 +20,10 @@ For a full diff see [`dcd4cfb...main`][dcd4cfb...main].
 * Added `Result` ([#6]), by [@localheinz]
 * Added `SchemaValidator` ([#8]), by [@localheinz]
 
-[dcd4cfb...main]: https://github.com/ergebnis/json-schema-validator/compare/dcd4cfb...main
+[1.0.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/1.0.0
+
+[dcd4cfb...1.0.0]: https://github.com/ergebnis/json-schema-validator/compare/dcd4cfb...1.0.0
+[1.0.0...main]: https://github.com/ergebnis/json-schema-validator/compare/1.0.0...main
 
 [#2]: https://github.com/ergebnis/json-schema-validator/pull/2
 [#3]: https://github.com/ergebnis/json-schema-validator/pull/3
