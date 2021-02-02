@@ -7,7 +7,7 @@ on: # yamllint disable-line rule:truthy
     - cron: "0 0 1 1 *"
 
 env:
-  PHP_EXTENSIONS: "mbstring"
+  PHP_EXTENSIONS: "json, mbstring"
 
 jobs:
   license:
