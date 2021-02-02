@@ -43,34 +43,13 @@ TXT;
     }
 
     /**
-     * @dataProvider provideValidJsonString
+     * @dataProvider \Ergebnis\Json\SchemaValidator\Test\DataProvider\JsonProvider::validString()
      */
     public function testFromStringReturnsJsonWhenValueIsValidJson(string $encoded): void
     {
         $json = Json::fromString($encoded);
 
         self::assertSame($encoded, $json->encoded());
-    }
-
-    /**
-     * @return \Generator<string, array{0: string}>
-     */
-    public function provideValidJsonString(): \Generator
-    {
-        foreach (self::filesContainingValidJson() as $key => $value) {
-            $content = \file_get_contents($value);
-
-            if (!\is_string($content)) {
-                throw new \RuntimeException(\sprintf(
-                    'File "%s" does not exist or can not be read.',
-                    $value
-                ));
-            }
-
-            yield $key => [
-                $content,
-            ];
-        }
     }
 
     public function testFromFileThrowsWhenFileDoesNotExist(): void
@@ -101,41 +80,12 @@ TXT;
     }
 
     /**
-     * @dataProvider provideValidJsonFile
+     * @dataProvider \Ergebnis\Json\SchemaValidator\Test\DataProvider\JsonProvider::validFile()
      */
     public function testFromFileReturnsJsonWhenFileContainsValidJson(string $file): void
     {
         $json = Json::fromFile($file);
 
         self::assertStringEqualsFile($file, $json->encoded());
-    }
-
-    /**
-     * @return \Generator<string, array{0: string}>
-     */
-    public function provideValidJsonFile(): \Generator
-    {
-        foreach (self::filesContainingValidJson() as $key => $value) {
-            yield $key => [
-                $value,
-            ];
-        }
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private static function filesContainingValidJson(): array
-    {
-        return [
-            'array' => __DIR__ . '/../Fixture/Json/valid/array.json',
-            'bool-false' => __DIR__ . '/../Fixture/Json/valid/bool-false.json',
-            'bool-true' => __DIR__ . '/../Fixture/Json/valid/bool-true.json',
-            'float' => __DIR__ . '/../Fixture/Json/valid/float.json',
-            'int' => __DIR__ . '/../Fixture/Json/valid/int.json',
-            'object' => __DIR__ . '/../Fixture/Json/valid/object.json',
-            'string-arbitrary' => __DIR__ . '/../Fixture/Json/valid/string-arbitrary.json',
-            'string-empty' => __DIR__ . '/../Fixture/Json/valid/string-empty.json',
-        ];
     }
 }
