@@ -14,6 +14,7 @@ For a full diff see [`dcd4cfb...main`][dcd4cfb...main].
 * Added `Schema` ([#3]), by [@localheinz]
 * Added `Decoder` ([#5]), by [@localheinz]
 * Added `Result` ([#6]), by [@localheinz]
+* Added `SchemaValidator` ([#8]), by [@localheinz]
 
 [dcd4cfb...main]: https://github.com/ergebnis/json-schema-validator/compare/dcd4cfb...main
 
@@ -21,5 +22,6 @@ For a full diff see [`dcd4cfb...main`][dcd4cfb...main].
 [#3]: https://github.com/ergebnis/json-schema-validator/pull/3
 [#5]: https://github.com/ergebnis/json-schema-validator/pull/5
 [#6]: https://github.com/ergebnis/json-schema-validator/pull/6
+[#8]: https://github.com/ergebnis/json-schema-validator/pull/8
 
 [@localheinz]: https://github.com/localheinz
