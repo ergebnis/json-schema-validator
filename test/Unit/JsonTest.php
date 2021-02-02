@@ -131,6 +131,8 @@ TXT;
             'array' => __DIR__ . '/../Fixture/Json/valid/array.json',
             'bool-false' => __DIR__ . '/../Fixture/Json/valid/bool-false.json',
             'bool-true' => __DIR__ . '/../Fixture/Json/valid/bool-true.json',
+            'float' => __DIR__ . '/../Fixture/Json/valid/float.json',
+            'int' => __DIR__ . '/../Fixture/Json/valid/int.json',
             'object' => __DIR__ . '/../Fixture/Json/valid/object.json',
             'string-arbitrary' => __DIR__ . '/../Fixture/Json/valid/string-arbitrary.json',
             'string-empty' => __DIR__ . '/../Fixture/Json/valid/string-empty.json',
