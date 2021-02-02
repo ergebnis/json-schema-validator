@@ -23,7 +23,37 @@ $ composer require ergebnis/json-schema-validator
 
 ## Usage
 
-:bulb: This is a great place for showing a few usage examples!
+If you have used the validator from `justinrainbow/json-schema` before, you might have observed that it has a few flaws:
+
+- The validator is stateful.
+- The validator requires decoding JSON strings before validating them.
+- The validator returns an `array` of errors, where each error is an `array`.
+
+This package delegates the validation to `justinrainbow/json-schema` and provides a friendlier interface.
+
+```php
+<?php
+
+use Ergebnis\Json\SchemaValidator;
+use JsonSchema\Validator;
+
+$json = SchemaValidator\Json::fromFile('composer.json');
+
+$schema = SchemaValidator\Schema::fromJson(SchemaValidator\Json::fromString(file_get_contents('https://getcomposer.org/schema.json')));
+
+$schemaValidator = new SchemaValidator\SchemaValidator(
+    new SchemaValidator\Decoder(),
+    new Validator()
+);
+
+$result = $schemaValidator->validate(
+    $json,
+    $schema
+);
+
+var_dump($result->isValid()); // bool
+var_dump($result->errors());  // flat list of error messages
+```
 
 ## Changelog
 
