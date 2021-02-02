@@ -9,7 +9,7 @@ on: # yamllint disable-line rule:truthy
       - "main"
 
 env:
-  PHP_EXTENSIONS: "mbstring"
+  PHP_EXTENSIONS: "json, mbstring"
 
 jobs:
   coding-standards:

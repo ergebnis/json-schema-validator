@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="3.7.2@d9cae720c1af31db9ba27c2bc1fcf9b0dd092fb0"/>
+<files psalm-version="4.4.1@9fd7a7d885b3a216cff8dec9d8c21a132f275224">
+  <file src="src/Json.php">
+    <MixedAssignment occurrences="2">
+      <code>$decoded</code>
+      <code>$decoded</code>
+    </MixedAssignment>
+  </file>
+</files>
