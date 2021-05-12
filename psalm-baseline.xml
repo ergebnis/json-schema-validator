@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.4.1@9fd7a7d885b3a216cff8dec9d8c21a132f275224">
+<files psalm-version="4.7.0@d4377c0baf3ffbf0b1ec6998e8d1be2a40971005">
   <file src="src/Decoder.php">
     <MixedAssignment occurrences="2">
       <code>$decoded</code>
@@ -19,6 +19,11 @@
       <code>$decoded</code>
       <code>$decoded</code>
     </MixedAssignment>
+  </file>
+  <file src="src/Result.php">
+    <MixedPropertyTypeCoercion occurrences="1">
+      <code>$errors</code>
+    </MixedPropertyTypeCoercion>
   </file>
   <file src="test/DataProvider/JsonProvider.php">
     <MoreSpecificReturnType occurrences="2">
