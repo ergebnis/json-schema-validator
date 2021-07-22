@@ -18,7 +18,7 @@
   "require": {
     "php": "^7.3 || ^8.0",
     "ext-json": "*",
-    "justinrainbow/json-schema": "^5.2.10"
+    "justinrainbow/json-schema": "^5.2.11"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.13.3",
