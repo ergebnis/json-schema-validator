@@ -1,6 +1,7 @@
 # json-schema-validator
 
 [![Integrate](https://github.com/ergebnis/json-schema-validator/workflows/Integrate/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
+[![Merge](https://github.com/ergebnis/json-schema-validator/workflows/Merge/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
 [![Prune](https://github.com/ergebnis/json-schema-validator/workflows/Prune/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
 [![Release](https://github.com/ergebnis/json-schema-validator/workflows/Release/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
 [![Renew](https://github.com/ergebnis/json-schema-validator/workflows/Renew/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
