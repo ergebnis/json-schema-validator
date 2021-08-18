@@ -33,7 +33,7 @@ final class SchemaValidator
 
         $this->validator->check(
             $this->decoder->decodeNonAssociative($json->encoded()),
-            $schema->decoded()
+            $schema->decoded(),
         );
 
         /** @var array<int, array> $originalErrors */
@@ -67,7 +67,7 @@ final class SchemaValidator
             return \sprintf(
                 '%s: %s',
                 $property,
-                $message
+                $message,
             );
         }, $originalErrors);
 

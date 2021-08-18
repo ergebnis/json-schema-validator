@@ -30,7 +30,7 @@ final class SrcCodeTest extends Framework\TestCase
         self::assertClassesHaveTests(
             __DIR__ . '/../../src/',
             'Ergebnis\\Json\\SchemaValidator\\',
-            'Ergebnis\\Json\\SchemaValidator\\Test\\Unit\\'
+            'Ergebnis\\Json\\SchemaValidator\\Test\\Unit\\',
         );
     }
 }

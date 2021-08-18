@@ -19,7 +19,7 @@ final class DoesNotExist extends \InvalidArgumentException
     {
         return new self(\sprintf(
             'File "%s" does not exist.',
-            $name
+            $name,
         ));
     }
 }

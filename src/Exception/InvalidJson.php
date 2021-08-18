@@ -24,7 +24,7 @@ final class InvalidJson extends \InvalidArgumentException
     {
         return new self(\sprintf(
             'File "%s" does not contain a valid JSON string.',
-            $name
+            $name,
         ));
     }
 }

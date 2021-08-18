@@ -34,7 +34,7 @@ final class CanNotBeReadTest extends Framework\TestCase
 
         $expected = \sprintf(
             'File "%s" can not be read.',
-            $name
+            $name,
         );
 
         self::assertSame($expected, $exception->getMessage());

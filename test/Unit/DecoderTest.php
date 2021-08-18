@@ -54,7 +54,7 @@ TXT;
 
         $expected = \json_decode(
             $encoded,
-            true
+            true,
         );
 
         self::assertSame($expected, $decoded);
@@ -85,7 +85,7 @@ TXT;
 
         $expected = \json_decode(
             $encoded,
-            false
+            false,
         );
 
         self::assertEquals($expected, $decoded);

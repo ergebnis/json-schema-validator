@@ -34,7 +34,7 @@ final class DoesNotExistTest extends Framework\TestCase
 
         $expected = \sprintf(
             'File "%s" does not exist.',
-            $name
+            $name,
         );
 
         self::assertSame($expected, $exception->getMessage());
