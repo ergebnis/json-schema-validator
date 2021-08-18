@@ -31,7 +31,7 @@ final class JsonProvider
             if (!\is_string($contents)) {
                 throw new \RuntimeException(\sprintf(
                     'File "%s" does not exist or can not be read.',
-                    $file
+                    $file,
                 ));
             }
 

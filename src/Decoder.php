@@ -24,7 +24,7 @@ final class Decoder
     {
         $decoded = \json_decode(
             $value,
-            true
+            true,
         );
 
         if (null === $decoded && \JSON_ERROR_NONE !== \json_last_error()) {
@@ -43,7 +43,7 @@ final class Decoder
     {
         $decoded = \json_decode(
             $value,
-            false
+            false,
         );
 
         if (null === $decoded && \JSON_ERROR_NONE !== \json_last_error()) {

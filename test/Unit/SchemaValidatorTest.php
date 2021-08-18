@@ -77,12 +77,12 @@ JSON
 
         $validator = new SchemaValidator(
             new Decoder(),
-            new Validator()
+            new Validator(),
         );
 
         $result = $validator->validate(
             $json,
-            $schema
+            $schema,
         );
 
         self::assertFalse($result->isValid());
@@ -139,12 +139,12 @@ JSON
 
         $validator = new SchemaValidator(
             new Decoder(),
-            new Validator()
+            new Validator(),
         );
 
         $result = $validator->validate(
             $json,
-            $schema
+            $schema,
         );
 
         self::assertTrue($result->isValid());
@@ -202,17 +202,17 @@ JSON
 
         $validator = new SchemaValidator(
             new Decoder(),
-            new Validator()
+            new Validator(),
         );
 
         $validator->validate(
             $invalidJson,
-            $schema
+            $schema,
         );
 
         $secondResult = $validator->validate(
             $validJson,
-            $schema
+            $schema,
         );
 
         self::assertTrue($secondResult->isValid());

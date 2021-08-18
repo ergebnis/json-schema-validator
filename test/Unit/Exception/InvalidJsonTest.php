@@ -41,7 +41,7 @@ final class InvalidJsonTest extends Framework\TestCase
 
         $expected = \sprintf(
             'File "%s" does not contain a valid JSON string.',
-            $name
+            $name,
         );
 
         self::assertSame($expected, $exception->getMessage());

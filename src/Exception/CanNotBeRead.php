@@ -19,7 +19,7 @@ final class CanNotBeRead extends \InvalidArgumentException
     {
         return new self(\sprintf(
             'File "%s" can not be read.',
-            $name
+            $name,
         ));
     }
 }
