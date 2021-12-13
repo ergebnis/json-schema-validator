@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
-use Ergebnis\Json\SchemaValidator\Decoder;
 use Ergebnis\Json\SchemaValidator\Json;
 use Ergebnis\Json\SchemaValidator\Schema;
 use Ergebnis\Json\SchemaValidator\SchemaValidator;
@@ -26,7 +25,6 @@ use PHPUnit\Framework;
  *
  * @covers \Ergebnis\Json\SchemaValidator\SchemaValidator
  *
- * @uses \Ergebnis\Json\SchemaValidator\Decoder
  * @uses \Ergebnis\Json\SchemaValidator\Json
  * @uses \Ergebnis\Json\SchemaValidator\Result
  * @uses \Ergebnis\Json\SchemaValidator\Schema
@@ -75,10 +73,7 @@ JSON
 JSON
         ));
 
-        $validator = new SchemaValidator(
-            new Decoder(),
-            new Validator(),
-        );
+        $validator = new SchemaValidator(new Validator());
 
         $result = $validator->validate(
             $json,
@@ -137,10 +132,7 @@ JSON
 JSON
         ));
 
-        $validator = new SchemaValidator(
-            new Decoder(),
-            new Validator(),
-        );
+        $validator = new SchemaValidator(new Validator());
 
         $result = $validator->validate(
             $json,
@@ -200,10 +192,7 @@ JSON
 JSON
         ));
 
-        $validator = new SchemaValidator(
-            new Decoder(),
-            new Validator(),
-        );
+        $validator = new SchemaValidator(new Validator());
 
         $validator->validate(
             $invalidJson,

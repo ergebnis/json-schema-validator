@@ -42,10 +42,7 @@ $json = SchemaValidator\Json::fromFile('composer.json');
 
 $schema = SchemaValidator\Schema::fromJson(SchemaValidator\Json::fromString(file_get_contents('https://getcomposer.org/schema.json')));
 
-$schemaValidator = new SchemaValidator\SchemaValidator(
-    new SchemaValidator\Decoder(),
-    new Validator()
-);
+$schemaValidator = new SchemaValidator\SchemaValidator(new Validator());
 
 $result = $schemaValidator->validate(
     $json,
