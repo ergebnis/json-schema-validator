@@ -23,6 +23,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 - Removed `Schema` ([#161]), by [@localheinz]
 - Composed `Error` into `Result` ([#166]), by [@localheinz]
 - Required `JsonPointer` to allow specifying sub-schemas ([#167]), by [@localheinz]
+- Renamed `Result` to `ValidationResult` ([#172]), by [@localheinz]
 
 ## [`1.0.0`][1.0.0]
 
@@ -56,5 +57,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#165]: https://github.com/ergebnis/json-schema-validator/pull/165
 [#166]: https://github.com/ergebnis/json-schema-validator/pull/166
 [#167]: https://github.com/ergebnis/json-schema-validator/pull/167
+[#172]: https://github.com/ergebnis/json-schema-validator/pull/172
 
 [@localheinz]: https://github.com/localheinz

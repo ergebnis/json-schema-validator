@@ -31,7 +31,7 @@ final class SchemaValidator
         Json $json,
         Json $schema,
         JsonPointer $jsonPointer
-    ): Result {
+    ): ValidationResult {
         $schemaDecoded = \json_decode(
             $schema->toString(),
             false,
@@ -86,6 +86,6 @@ final class SchemaValidator
             );
         }, $originalErrors);
 
-        return Result::create(...$validationErrors);
+        return ValidationResult::create(...$validationErrors);
     }
 }
