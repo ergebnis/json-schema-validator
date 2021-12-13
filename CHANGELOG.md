@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`1.0.0...main`][1.0.0...main].
+For a full diff see [`2.0.0...main`][2.0.0...main].
+
+## [`2.0.0`][2.0.0]
+
+For a full diff see [`1.0.0...2.0.0`][1.0.0...2.0.0].
 
 ### Added
 
@@ -23,6 +27,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 - Removed `Schema` ([#161]), by [@localheinz]
 - Composed `Error` into `Result` ([#166]), by [@localheinz]
 - Required `JsonPointer` to allow specifying sub-schemas ([#167]), by [@localheinz]
+- Renamed `Error` to `ValidationError` ([#169]), by [@localheinz]
 - Renamed `Result` to `ValidationResult` ([#172]), by [@localheinz]
 
 ## [`1.0.0`][1.0.0]
@@ -38,9 +43,11 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 - Added `SchemaValidator` ([#8]), by [@localheinz]
 
 [1.0.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/1.0.0
+[2.0.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/2.0.0
 
 [dcd4cfb...1.0.0]: https://github.com/ergebnis/json-schema-validator/compare/dcd4cfb...1.0.0
-[1.0.0...main]: https://github.com/ergebnis/json-schema-validator/compare/1.0.0...main
+[1.0.0...2.0.0]: https://github.com/ergebnis/json-schema-validator/compare/1.0.0...2.0.0
+[2.0.0...main]: https://github.com/ergebnis/json-schema-validator/compare/2.0.0...main
 
 [#2]: https://github.com/ergebnis/json-schema-validator/pull/2
 [#3]: https://github.com/ergebnis/json-schema-validator/pull/3
@@ -57,6 +64,7 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#165]: https://github.com/ergebnis/json-schema-validator/pull/165
 [#166]: https://github.com/ergebnis/json-schema-validator/pull/166
 [#167]: https://github.com/ergebnis/json-schema-validator/pull/167
+[#169]: https://github.com/ergebnis/json-schema-validator/pull/169
 [#172]: https://github.com/ergebnis/json-schema-validator/pull/172
 
 [@localheinz]: https://github.com/localheinz
