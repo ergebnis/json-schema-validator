@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\Json\SchemaValidator\Error;
+use Ergebnis\Json\SchemaValidator\Exception;
 use Ergebnis\Json\SchemaValidator\Json;
 use Ergebnis\Json\SchemaValidator\JsonPointer;
 use Ergebnis\Json\SchemaValidator\Message;
@@ -27,6 +28,8 @@ use PHPUnit\Framework;
  * @covers \Ergebnis\Json\SchemaValidator\SchemaValidator
  *
  * @uses \Ergebnis\Json\SchemaValidator\Error
+ * @uses \Ergebnis\Json\SchemaValidator\Exception\CanNotResolve
+ * @uses \Ergebnis\Json\SchemaValidator\Exception\ResolvedToRootSchema
  * @uses \Ergebnis\Json\SchemaValidator\Json
  * @uses \Ergebnis\Json\SchemaValidator\JsonPointer
  * @uses \Ergebnis\Json\SchemaValidator\Message
@@ -36,196 +39,326 @@ final class SchemaValidatorTest extends Framework\TestCase
 {
     use Test\Util\Helper;
 
-    public function testValidateReturnsResultWhenDataIsNotValidAccordingToSchema(): void
+    public function testValidateReturnsResultWhenJsonIsValidAccordingToSchemaAndJsonPointerIsEmpty(): void
     {
-        $json = Json::fromString(
-            <<<'JSON'
-{
-    "number": 1600,
-    "street_name": "Pennsylvania",
-    "street_type": "Avenue",
-    "direction": "NW"
-}
-JSON
-        );
+        $faker = self::faker();
 
-        $schema = Json::fromString(
-            <<<'JSON'
-{
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string"
-        },
-        "email": {
-            "type": "string"
-        },
-        "address": {
-            "type": "string"
-        },
-        "telephone": {
-            "type": "string"
-        }
-    },
-    "required": [
-        "name",
-        "email"
-    ],
-    "additionalProperties": false
-}
-JSON
-        );
+        $data = Json::fromString(\json_encode([
+            'foo' => [
+                'bar' => $faker->boolean(),
+                'baz' => $faker->words(),
+            ],
+        ]));
 
-        $validator = new SchemaValidator();
+        $schema = Json::fromString(\json_encode([
+            'additionalProperties' => false,
+            'properties' => [
+                'foo' => [
+                    'additionalProperties' => false,
+                    'properties' => [
+                        'bar' => [
+                            'type' => 'boolean',
+                        ],
+                        'baz' => [
+                            'type' => 'array',
+                        ],
+                    ],
+                    'required' => [
+                        'bar',
+                        'baz',
+                    ],
+                    'type' => 'object',
+                ],
+            ],
+            'required' => [
+                'foo',
+            ],
+            'type' => 'object',
+        ]));
 
-        $result = $validator->validate(
-            $json,
+        $jsonPointer = JsonPointer::empty();
+
+        $schemaValidator = new SchemaValidator();
+
+        $result = $schemaValidator->validate(
+            $data,
             $schema,
+            $jsonPointer,
+        );
+
+        self::assertTrue($result->isValid());
+    }
+
+    public function testValidateReturnsResultWhenJsonIsNotValidAccordingToSchemaAndJsonPointerIsEmpty(): void
+    {
+        $faker = self::faker();
+
+        $data = Json::fromString(\json_encode([
+            'foo' => [
+                'bar' => $faker->numberBetween(1),
+                'baz' => $faker->sentence(),
+            ],
+            'qux' => $faker->sentence(),
+        ]));
+
+        $schema = Json::fromString(\json_encode([
+            'additionalProperties' => false,
+            'properties' => [
+                'foo' => [
+                    'additionalProperties' => false,
+                    'properties' => [
+                        'bar' => [
+                            'type' => 'boolean',
+                        ],
+                        'baz' => [
+                            'type' => 'array',
+                        ],
+                    ],
+                    'required' => [
+                        'bar',
+                        'baz',
+                    ],
+                    'type' => 'object',
+                ],
+            ],
+            'required' => [
+                'foo',
+            ],
+            'type' => 'object',
+        ]));
+
+        $jsonPointer = JsonPointer::empty();
+
+        $schemaValidator = new SchemaValidator();
+
+        $result = $schemaValidator->validate(
+            $data,
+            $schema,
+            $jsonPointer,
         );
 
         self::assertFalse($result->isValid());
 
         $expected = [
             Error::create(
-                JsonPointer::fromString('/name'),
-                Message::fromString('The property name is required'),
+                JsonPointer::fromString('/foo/bar'),
+                Message::fromString('Integer value found, but a boolean is required'),
             ),
             Error::create(
-                JsonPointer::fromString('/email'),
-                Message::fromString('The property email is required'),
+                JsonPointer::fromString('/foo/baz'),
+                Message::fromString('String value found, but an array is required'),
             ),
             Error::create(
-                JsonPointer::fromString(''),
-                Message::fromString('The property number is not defined and the definition does not allow additional properties'),
-            ),
-            Error::create(
-                JsonPointer::fromString(''),
-                Message::fromString('The property street_name is not defined and the definition does not allow additional properties'),
-            ),
-            Error::create(
-                JsonPointer::fromString(''),
-                Message::fromString('The property street_type is not defined and the definition does not allow additional properties'),
-            ),
-            Error::create(
-                JsonPointer::fromString(''),
-                Message::fromString('The property direction is not defined and the definition does not allow additional properties'),
+                JsonPointer::empty(),
+                Message::fromString('The property qux is not defined and the definition does not allow additional properties'),
             ),
         ];
 
         self::assertEquals($expected, $result->errors());
     }
 
-    public function testValidateReturnsResultWhenDataIsValidAccordingToSchema(): void
+    public function testValidateReturnsResultWhenJsonIsValidAccordingToSchemaAndJsonPointerIsNotEmpty(): void
     {
-        $json = Json::fromString(
-            <<<'JSON'
-{
-    "name": "Jane Doe",
-    "email": "jane.doe@example.org"
-}
-JSON
-        );
+        $faker = self::faker();
 
-        $schema = Json::fromString(
-            <<<'JSON'
-{
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string"
-        },
-        "email": {
-            "type": "string"
-        },
-        "address": {
-            "type": "string"
-        },
-        "telephone": {
-            "type": "string"
-        }
-    },
-    "required": [
-        "name",
-        "email"
-    ],
-    "additionalProperties": false
-}
-JSON
-        );
+        $data = Json::fromString(\json_encode([
+            'bar' => $faker->boolean(),
+            'baz' => $faker->words(),
+        ]));
 
-        $validator = new SchemaValidator();
+        $schema = Json::fromString(\json_encode([
+            'additionalProperties' => false,
+            'properties' => [
+                'foo' => [
+                    'additionalProperties' => false,
+                    'properties' => [
+                        'bar' => [
+                            'type' => 'boolean',
+                        ],
+                        'baz' => [
+                            'type' => 'array',
+                        ],
+                    ],
+                    'required' => [
+                        'bar',
+                        'baz',
+                    ],
+                    'type' => 'object',
+                ],
+            ],
+            'required' => [
+                'foo',
+            ],
+            'type' => 'object',
+        ]));
 
-        $result = $validator->validate(
-            $json,
+        $jsonPointer = JsonPointer::fromString('#/properties/foo');
+
+        $schemaValidator = new SchemaValidator();
+
+        $result = $schemaValidator->validate(
+            $data,
             $schema,
+            $jsonPointer,
         );
 
         self::assertTrue($result->isValid());
-        self::assertSame([], $result->errors());
     }
 
-    public function testValidateClearsStateOfInternalValidator(): void
+    public function testValidateThrowsCanNotResolveWhenJsonPointerIsNotEmptyAndSubSchemaCouldNotBeResolved(): void
     {
-        $invalidJson = Json::fromString(
-            <<<'JSON'
-{
-    "number": 1600,
-    "street_name": "Pennsylvania",
-    "street_type": "Avenue",
-    "direction": "NW"
-}
-JSON
-        );
+        $faker = self::faker();
 
-        $validJson = Json::fromString(
-            <<<'JSON'
-{
-    "name": "Jane Doe",
-    "email": "jane.doe@example.org"
-}
-JSON
-        );
+        $data = Json::fromString(\json_encode([
+            'bar' => $faker->boolean(),
+            'baz' => $faker->words(),
+        ]));
 
-        $schema = Json::fromString(
-            <<<'JSON'
-{
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string"
-        },
-        "email": {
-            "type": "string"
-        },
-        "address": {
-            "type": "string"
-        },
-        "telephone": {
-            "type": "string"
-        }
-    },
-    "required": [
-        "name",
-        "email"
-    ],
-    "additionalProperties": false
-}
-JSON
-        );
+        $schema = Json::fromString(\json_encode([
+            'additionalProperties' => false,
+            'properties' => [
+                'foo' => [
+                    'additionalProperties' => false,
+                    'properties' => [
+                        'bar' => [
+                            'type' => 'boolean',
+                        ],
+                        'baz' => [
+                            'type' => 'array',
+                        ],
+                    ],
+                    'required' => [
+                        'bar',
+                        'baz',
+                    ],
+                    'type' => 'object',
+                ],
+            ],
+            'required' => [
+                'foo',
+            ],
+            'type' => 'object',
+        ]));
 
-        $validator = new SchemaValidator();
+        $jsonPointer = JsonPointer::fromString('#/properties/qux');
 
-        $validator->validate(
-            $invalidJson,
+        $schemaValidator = new SchemaValidator();
+
+        $this->expectException(Exception\CanNotResolve::class);
+
+        $schemaValidator->validate(
+            $data,
             $schema,
+            $jsonPointer,
         );
+    }
 
-        $secondResult = $validator->validate(
-            $validJson,
+    public function testValidateThrowsResolvedToRootSchemaWhenJsonPointerIsNotEmptyAndSubSchemaWasResolvedToRootSchema(): void
+    {
+        $faker = self::faker();
+
+        $data = Json::fromString(\json_encode([
+            'bar' => $faker->boolean(),
+            'baz' => $faker->words(),
+        ]));
+
+        $schema = Json::fromString(\json_encode([
+            'additionalProperties' => false,
+            'properties' => [
+                'foo' => [
+                    'additionalProperties' => false,
+                    'properties' => [
+                        'bar' => [
+                            'type' => 'boolean',
+                        ],
+                        'baz' => [
+                            'type' => 'array',
+                        ],
+                    ],
+                    'required' => [
+                        'bar',
+                        'baz',
+                    ],
+                    'type' => 'object',
+                ],
+            ],
+            'required' => [
+                'foo',
+            ],
+            'type' => 'object',
+        ]));
+
+        $jsonPointer = JsonPointer::fromString('/properties/qux');
+
+        $schemaValidator = new SchemaValidator();
+
+        $this->expectException(Exception\ResolvedToRootSchema::class);
+
+        $schemaValidator->validate(
+            $data,
             $schema,
+            $jsonPointer,
+        );
+    }
+
+    public function testValidateReturnsResultWhenJsonIsNotValidAccordingToSchemaAndJsonPathIsNotEmpty(): void
+    {
+        $faker = self::faker();
+
+        $data = Json::fromString(\json_encode([
+            'bar' => $faker->sentence(),
+            'baz' => $faker->boolean(),
+        ]));
+
+        $schema = Json::fromString(\json_encode([
+            'additionalProperties' => false,
+            'properties' => [
+                'foo' => [
+                    'additionalProperties' => false,
+                    'properties' => [
+                        'bar' => [
+                            'type' => 'boolean',
+                        ],
+                        'baz' => [
+                            'type' => 'array',
+                        ],
+                    ],
+                    'required' => [
+                        'bar',
+                        'baz',
+                    ],
+                    'type' => 'object',
+                ],
+            ],
+            'required' => [
+                'foo',
+            ],
+            'type' => 'object',
+        ]));
+
+        $jsonPointer = JsonPointer::fromString('#/properties/foo');
+
+        $schemaValidator = new SchemaValidator();
+
+        $result = $schemaValidator->validate(
+            $data,
+            $schema,
+            $jsonPointer,
         );
 
-        self::assertTrue($secondResult->isValid());
-        self::assertSame([], $secondResult->errors());
+        self::assertFalse($result->isValid());
+
+        $expected = [
+            Error::create(
+                JsonPointer::fromString('/bar'),
+                Message::fromString('String value found, but a boolean is required'),
+            ),
+            Error::create(
+                JsonPointer::fromString('/baz'),
+                Message::fromString('Boolean value found, but an array is required'),
+            ),
+        ];
+
+        self::assertEquals($expected, $result->errors());
     }
 }

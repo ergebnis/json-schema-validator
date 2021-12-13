@@ -22,6 +22,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 - Disallowed injection of `Validator` into `SchemaValidator` ([#158]), by [@localheinz]
 - Removed `Schema` ([#161]), by [@localheinz]
 - Composed `Error` into `Result` ([#166]), by [@localheinz]
+- Required `JsonPointer` to allow specifying sub-schemas ([#166]), by [@localheinz]
 
 ## [`1.0.0`][1.0.0]
 
