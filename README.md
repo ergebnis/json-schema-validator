@@ -45,7 +45,8 @@ $schemaValidator = new SchemaValidator\SchemaValidator();
 
 $result = $schemaValidator->validate(
     $json,
-    $schema
+    $schema,
+    $jsonPointer
 );
 
 var_dump($result->isValid()); // bool
