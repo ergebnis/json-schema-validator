@@ -29,7 +29,10 @@ final class Json
     {
         $decoded = \json_decode($encoded);
 
-        if (null === $decoded && \JSON_ERROR_NONE !== \json_last_error()) {
+        if (
+            null === $decoded
+            && \JSON_ERROR_NONE !== \json_last_error()
+        ) {
             throw Exception\InvalidJson::string();
         }
 
@@ -55,7 +58,10 @@ final class Json
 
         $decoded = \json_decode($encoded);
 
-        if (null === $decoded && \JSON_ERROR_NONE !== \json_last_error()) {
+        if (
+            null === $decoded
+            && \JSON_ERROR_NONE !== \json_last_error()
+        ) {
             throw Exception\InvalidJson::file($file);
         }
 
