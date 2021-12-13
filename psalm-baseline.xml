@@ -11,6 +11,11 @@
       <code>$errors</code>
     </MixedPropertyTypeCoercion>
   </file>
+  <file src="src/SchemaValidator.php">
+    <MixedAssignment occurrences="1">
+      <code>$jsonDecoded</code>
+    </MixedAssignment>
+  </file>
   <file src="test/DataProvider/JsonProvider.php">
     <MoreSpecificReturnType occurrences="2">
       <code>\Generator&lt;string, array{0: string}&gt;</code>
