@@ -50,7 +50,7 @@ $result = $schemaValidator->validate(
 );
 
 var_dump($result->isValid()); // bool
-var_dump($result->errors());  // flat list of `Error` value objects
+var_dump($result->errors());  // flat list of `ValidationError` value objects
 ```
 
 ## Changelog
