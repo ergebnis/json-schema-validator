@@ -15,7 +15,7 @@ namespace Ergebnis\Json\SchemaValidator;
 
 final class Json
 {
-    private $encoded;
+    private string $encoded;
 
     private function __construct(string $encoded)
     {
