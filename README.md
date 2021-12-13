@@ -36,13 +36,12 @@ This package delegates the validation to `justinrainbow/json-schema` and provide
 <?php
 
 use Ergebnis\Json\SchemaValidator;
-use JsonSchema\Validator;
 
 $json = SchemaValidator\Json::fromFile('composer.json');
 
 $schema = SchemaValidator\Schema::fromJson(SchemaValidator\Json::fromString(file_get_contents('https://getcomposer.org/schema.json')));
 
-$schemaValidator = new SchemaValidator\SchemaValidator(new Validator());
+$schemaValidator = new SchemaValidator\SchemaValidator();
 
 $result = $schemaValidator->validate(
     $json,
