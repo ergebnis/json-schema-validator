@@ -23,8 +23,7 @@ final class JsonProvider extends DataProvider\AbstractProvider
     public static function validString(): \Generator
     {
         yield from self::provideDataForValues(\array_map(static function (string $file): string {
-            $contents
-                = \file_get_contents($file);
+            $contents = \file_get_contents($file);
 
             if (!\is_string($contents)) {
                 throw new \RuntimeException(\sprintf(
