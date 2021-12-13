@@ -27,7 +27,7 @@ final class Schema
      */
     public static function fromJson(Json $json): self
     {
-        $decoded = \json_decode($json->encoded());
+        $decoded = \json_decode($json->toString());
 
         if (!$decoded instanceof \stdClass) {
             throw Exception\InvalidSchema::notAnObject();

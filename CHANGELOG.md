@@ -11,6 +11,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 ### Changed
 
 - Dropped support for PHP 7.3 ([#137]), by [@localheinz]
+- Renamed `Json::encoded()` to `Json::toString()` ([#155]), by [@localheinz]
 
 ## [`1.0.0`][1.0.0]
 

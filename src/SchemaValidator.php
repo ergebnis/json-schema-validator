@@ -35,7 +35,7 @@ final class SchemaValidator
         $this->validator->reset();
 
         $this->validator->check(
-            $this->decoder->decodeNonAssociative($json->encoded()),
+            $this->decoder->decodeNonAssociative($json->toString()),
             $schema->decoded(),
         );
 

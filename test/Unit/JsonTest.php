@@ -49,7 +49,7 @@ TXT;
     {
         $json = Json::fromString($encoded);
 
-        self::assertSame($encoded, $json->encoded());
+        self::assertSame($encoded, $json->toString());
     }
 
     public function testFromFileThrowsWhenFileDoesNotExist(): void
@@ -86,6 +86,6 @@ TXT;
     {
         $json = Json::fromFile($file);
 
-        self::assertStringEqualsFile($file, $json->encoded());
+        self::assertStringEqualsFile($file, $json->toString());
     }
 }

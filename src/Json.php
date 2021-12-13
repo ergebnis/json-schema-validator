@@ -18,19 +18,19 @@ namespace Ergebnis\Json\SchemaValidator;
  */
 final class Json
 {
-    private string $encoded;
+    private string $value;
 
-    private function __construct(string $encoded)
+    private function __construct(string $value)
     {
-        $this->encoded = $encoded;
+        $this->value = $value;
     }
 
     /**
      * @throws Exception\InvalidJson
      */
-    public static function fromString(string $encoded): self
+    public static function fromString(string $value): self
     {
-        $decoded = \json_decode($encoded);
+        $decoded = \json_decode($value);
 
         if (
             null === $decoded
@@ -39,7 +39,7 @@ final class Json
             throw Exception\InvalidJson::string();
         }
 
-        return new self($encoded);
+        return new self($value);
     }
 
     /**
@@ -53,13 +53,13 @@ final class Json
             throw Exception\DoesNotExist::file($file);
         }
 
-        $encoded = \file_get_contents($file);
+        $value = \file_get_contents($file);
 
-        if (!\is_string($encoded)) {
+        if (!\is_string($value)) {
             throw Exception\CanNotBeRead::file($file);
         }
 
-        $decoded = \json_decode($encoded);
+        $decoded = \json_decode($value);
 
         if (
             null === $decoded
@@ -68,11 +68,11 @@ final class Json
             throw Exception\InvalidJson::file($file);
         }
 
-        return new self($encoded);
+        return new self($value);
     }
 
-    public function encoded(): string
+    public function toString(): string
     {
-        return $this->encoded;
+        return $this->value;
     }
 }
