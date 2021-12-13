@@ -13,6 +13,9 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
+use Ergebnis\Json\SchemaValidator\Error;
+use Ergebnis\Json\SchemaValidator\JsonPointer;
+use Ergebnis\Json\SchemaValidator\Message;
 use Ergebnis\Json\SchemaValidator\Result;
 use Ergebnis\Json\SchemaValidator\Test;
 use PHPUnit\Framework;
@@ -21,6 +24,10 @@ use PHPUnit\Framework;
  * @internal
  *
  * @covers \Ergebnis\Json\SchemaValidator\Result
+ *
+ * @uses \Ergebnis\Json\SchemaValidator\Error
+ * @uses \Ergebnis\Json\SchemaValidator\JsonPointer
+ * @uses \Ergebnis\Json\SchemaValidator\Message
  */
 final class ResultTest extends Framework\TestCase
 {
@@ -39,9 +46,18 @@ final class ResultTest extends Framework\TestCase
         $faker = self::faker();
 
         $errors = [
-            $faker->sentence,
-            $faker->sentence,
-            $faker->sentence,
+            Error::create(
+                JsonPointer::fromString('/foo'),
+                Message::fromString($faker->sentence()),
+            ),
+            Error::create(
+                JsonPointer::fromString('/bar'),
+                Message::fromString($faker->sentence()),
+            ),
+            Error::create(
+                JsonPointer::fromString('/baz'),
+                Message::fromString($faker->sentence()),
+            ),
         ];
 
         $result = Result::create(...$errors);

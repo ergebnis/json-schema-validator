@@ -48,7 +48,7 @@ $result = $schemaValidator->validate(
 );
 
 var_dump($result->isValid()); // bool
-var_dump($result->errors());  // flat list of error messages
+var_dump($result->errors());  // flat list of `Error` value objects
 ```
 
 ## Changelog
