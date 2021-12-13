@@ -15,7 +15,7 @@ namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\Json\SchemaValidator\Exception;
 use Ergebnis\Json\SchemaValidator\Json;
-use Ergebnis\Test\Util;
+use Ergebnis\Json\SchemaValidator\Test;
 use PHPUnit\Framework;
 
 /**
@@ -28,7 +28,7 @@ use PHPUnit\Framework;
  */
 final class JsonTest extends Framework\TestCase
 {
-    use Util\Helper;
+    use Test\Util\Helper;
 
     public function testFromStringThrowsWhenValueIsNotJson(): void
     {
