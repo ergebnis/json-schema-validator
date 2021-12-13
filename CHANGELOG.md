@@ -10,7 +10,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 
 ### Changed
 
-* Dropped support for PHP 7.3 ([#137]), by [@localheinz]
+- Dropped support for PHP 7.3 ([#137]), by [@localheinz]
 
 ## [`1.0.0`][1.0.0]
 
@@ -18,11 +18,11 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 
 ### Added
 
-* Added `Json` ([#2]), by [@localheinz]
-* Added `Schema` ([#3]), by [@localheinz]
-* Added `Decoder` ([#5]), by [@localheinz]
-* Added `Result` ([#6]), by [@localheinz]
-* Added `SchemaValidator` ([#8]), by [@localheinz]
+- Added `Json` ([#2]), by [@localheinz]
+- Added `Schema` ([#3]), by [@localheinz]
+- Added `Decoder` ([#5]), by [@localheinz]
+- Added `Result` ([#6]), by [@localheinz]
+- Added `SchemaValidator` ([#8]), by [@localheinz]
 
 [1.0.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/1.0.0
 
