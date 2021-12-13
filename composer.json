@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php": "^7.3 || ^8.0",
+    "php": "^7.4 || ^8.0",
     "ext-json": "*",
     "justinrainbow/json-schema": "^5.2.10"
   },
@@ -32,7 +32,7 @@
   },
   "config": {
     "platform": {
-      "php": "7.3.24"
+      "php": "7.4.26"
     },
     "preferred-install": "dist",
     "sort-packages": true

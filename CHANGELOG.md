@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.0.0...main`][1.0.0...main].
 
+### Changed
+
+* Dropped support for PHP 7.3 ([#137]), by [@localheinz]
+
 ## [`1.0.0`][1.0.0]
 
 For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
@@ -30,5 +34,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#5]: https://github.com/ergebnis/json-schema-validator/pull/5
 [#6]: https://github.com/ergebnis/json-schema-validator/pull/6
 [#8]: https://github.com/ergebnis/json-schema-validator/pull/8
+[#137]: https://github.com/ergebnis/json-schema-validator/pull/137
 
 [@localheinz]: https://github.com/localheinz
