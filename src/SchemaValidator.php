@@ -19,7 +19,7 @@ final class SchemaValidator
 {
     public function validate(
         Json $json,
-        Schema $schema
+        Json $schema
     ): Result {
         $validator = new Validator();
 
@@ -30,9 +30,14 @@ final class SchemaValidator
             false,
         );
 
+        $schemaDecoded = \json_decode(
+            $schema->toString(),
+            false,
+        );
+
         $validator->validate(
             $jsonDecoded,
-            $schema->decoded(),
+            $schemaDecoded,
         );
 
         /** @var array<int, array> $originalErrors */
