@@ -79,13 +79,13 @@ final class SchemaValidator
         /** @var array<int, array> $originalErrors */
         $originalErrors = $validator->getErrors();
 
-        $errors = \array_map(static function (array $error): Error {
-            return Error::create(
+        $validationErrors = \array_map(static function (array $error): ValidationError {
+            return ValidationError::create(
                 JsonPointer::fromString($error['pointer']),
                 Message::fromString($error['message']),
             );
         }, $originalErrors);
 
-        return Result::create(...$errors);
+        return Result::create(...$validationErrors);
     }
 }

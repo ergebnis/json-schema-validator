@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
-use Ergebnis\Json\SchemaValidator\Error;
 use Ergebnis\Json\SchemaValidator\Exception;
 use Ergebnis\Json\SchemaValidator\Json;
 use Ergebnis\Json\SchemaValidator\JsonPointer;
 use Ergebnis\Json\SchemaValidator\Message;
 use Ergebnis\Json\SchemaValidator\SchemaValidator;
 use Ergebnis\Json\SchemaValidator\Test;
+use Ergebnis\Json\SchemaValidator\ValidationError;
 use PHPUnit\Framework;
 
 /**
@@ -27,13 +27,13 @@ use PHPUnit\Framework;
  *
  * @covers \Ergebnis\Json\SchemaValidator\SchemaValidator
  *
- * @uses \Ergebnis\Json\SchemaValidator\Error
  * @uses \Ergebnis\Json\SchemaValidator\Exception\CanNotResolve
  * @uses \Ergebnis\Json\SchemaValidator\Exception\ResolvedToRootSchema
  * @uses \Ergebnis\Json\SchemaValidator\Json
  * @uses \Ergebnis\Json\SchemaValidator\JsonPointer
  * @uses \Ergebnis\Json\SchemaValidator\Message
  * @uses \Ergebnis\Json\SchemaValidator\Result
+ * @uses \Ergebnis\Json\SchemaValidator\ValidationError
  */
 final class SchemaValidatorTest extends Framework\TestCase
 {
@@ -140,15 +140,15 @@ final class SchemaValidatorTest extends Framework\TestCase
         self::assertFalse($result->isValid());
 
         $expected = [
-            Error::create(
+            ValidationError::create(
                 JsonPointer::fromString('/foo/bar'),
                 Message::fromString('Integer value found, but a boolean is required'),
             ),
-            Error::create(
+            ValidationError::create(
                 JsonPointer::fromString('/foo/baz'),
                 Message::fromString('String value found, but an array is required'),
             ),
-            Error::create(
+            ValidationError::create(
                 JsonPointer::empty(),
                 Message::fromString('The property qux is not defined and the definition does not allow additional properties'),
             ),
@@ -349,11 +349,11 @@ final class SchemaValidatorTest extends Framework\TestCase
         self::assertFalse($result->isValid());
 
         $expected = [
-            Error::create(
+            ValidationError::create(
                 JsonPointer::fromString('/bar'),
                 Message::fromString('String value found, but a boolean is required'),
             ),
-            Error::create(
+            ValidationError::create(
                 JsonPointer::fromString('/baz'),
                 Message::fromString('Boolean value found, but an array is required'),
             ),
