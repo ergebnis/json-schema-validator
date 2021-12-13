@@ -36,5 +36,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#6]: https://github.com/ergebnis/json-schema-validator/pull/6
 [#8]: https://github.com/ergebnis/json-schema-validator/pull/8
 [#137]: https://github.com/ergebnis/json-schema-validator/pull/137
+[#155]: https://github.com/ergebnis/json-schema-validator/pull/155
 
 [@localheinz]: https://github.com/localheinz
