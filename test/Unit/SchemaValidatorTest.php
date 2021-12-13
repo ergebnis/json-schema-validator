@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\Json\SchemaValidator\Json;
-use Ergebnis\Json\SchemaValidator\Schema;
 use Ergebnis\Json\SchemaValidator\SchemaValidator;
 use Ergebnis\Json\SchemaValidator\Test;
 use PHPUnit\Framework;
@@ -26,7 +25,6 @@ use PHPUnit\Framework;
  *
  * @uses \Ergebnis\Json\SchemaValidator\Json
  * @uses \Ergebnis\Json\SchemaValidator\Result
- * @uses \Ergebnis\Json\SchemaValidator\Schema
  */
 final class SchemaValidatorTest extends Framework\TestCase
 {
@@ -45,7 +43,7 @@ final class SchemaValidatorTest extends Framework\TestCase
 JSON
         );
 
-        $schema = Schema::fromJson(Json::fromString(
+        $schema = Json::fromString(
             <<<'JSON'
 {
     "type": "object",
@@ -70,7 +68,7 @@ JSON
     "additionalProperties": false
 }
 JSON
-        ));
+        );
 
         $validator = new SchemaValidator();
 
@@ -104,7 +102,7 @@ JSON
 JSON
         );
 
-        $schema = Schema::fromJson(Json::fromString(
+        $schema = Json::fromString(
             <<<'JSON'
 {
     "type": "object",
@@ -129,7 +127,7 @@ JSON
     "additionalProperties": false
 }
 JSON
-        ));
+        );
 
         $validator = new SchemaValidator();
 
@@ -164,7 +162,7 @@ JSON
 JSON
         );
 
-        $schema = Schema::fromJson(Json::fromString(
+        $schema = Json::fromString(
             <<<'JSON'
 {
     "type": "object",
@@ -189,7 +187,7 @@ JSON
     "additionalProperties": false
 }
 JSON
-        ));
+        );
 
         $validator = new SchemaValidator();
 
