@@ -15,7 +15,7 @@ namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\Json\SchemaValidator\Decoder;
 use Ergebnis\Json\SchemaValidator\Exception;
-use Ergebnis\Test\Util;
+use Ergebnis\Json\SchemaValidator\Test;
 use PHPUnit\Framework;
 
 /**
@@ -27,7 +27,7 @@ use PHPUnit\Framework;
  */
 final class DecoderTest extends Framework\TestCase
 {
-    use Util\Helper;
+    use Test\Util\Helper;
 
     public function testDecodeAssociativeThrowsExceptionWhenValueCanNotBeDecoded(): void
     {

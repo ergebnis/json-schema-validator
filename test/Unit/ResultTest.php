@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\Json\SchemaValidator\Result;
-use Ergebnis\Test\Util;
+use Ergebnis\Json\SchemaValidator\Test;
 use PHPUnit\Framework;
 
 /**
@@ -24,7 +24,7 @@ use PHPUnit\Framework;
  */
 final class ResultTest extends Framework\TestCase
 {
-    use Util\Helper;
+    use Test\Util\Helper;
 
     public function testCreateReturnsResultWithoutErrors(): void
     {

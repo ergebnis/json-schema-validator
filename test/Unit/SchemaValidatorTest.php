@@ -17,7 +17,7 @@ use Ergebnis\Json\SchemaValidator\Decoder;
 use Ergebnis\Json\SchemaValidator\Json;
 use Ergebnis\Json\SchemaValidator\Schema;
 use Ergebnis\Json\SchemaValidator\SchemaValidator;
-use Ergebnis\Test\Util;
+use Ergebnis\Json\SchemaValidator\Test;
 use JsonSchema\Validator;
 use PHPUnit\Framework;
 
@@ -33,7 +33,7 @@ use PHPUnit\Framework;
  */
 final class SchemaValidatorTest extends Framework\TestCase
 {
-    use Util\Helper;
+    use Test\Util\Helper;
 
     public function testValidateReturnsResultWhenDataIsNotValidAccordingToSchema(): void
     {
