@@ -11,6 +11,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 ### Added
 
 - Implemented `JsonPointer` ([#163]), by [@localheinz]
+- Implemented `Message` ([#164]), by [@localheinz]
 
 ### Changed
 
@@ -48,5 +49,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#158]: https://github.com/ergebnis/json-schema-validator/pull/158
 [#161]: https://github.com/ergebnis/json-schema-validator/pull/161
 [#163]: https://github.com/ergebnis/json-schema-validator/pull/163
+[#164]: https://github.com/ergebnis/json-schema-validator/pull/164
 
 [@localheinz]: https://github.com/localheinz
