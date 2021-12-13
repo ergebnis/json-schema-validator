@@ -17,20 +17,15 @@ use JsonSchema\Validator;
 
 final class SchemaValidator
 {
-    private Validator $validator;
-
-    public function __construct(Validator $validator)
-    {
-        $this->validator = $validator;
-    }
-
     public function validate(
         Json $json,
         Schema $schema
     ): Result {
-        $this->validator->reset();
+        $validator = new Validator();
 
-        $this->validator->check(
+        $validator->reset();
+
+        $validator->check(
             \json_decode(
                 $json->toString(),
                 false,
@@ -39,7 +34,7 @@ final class SchemaValidator
         );
 
         /** @var array<int, array> $originalErrors */
-        $originalErrors = $this->validator->getErrors();
+        $originalErrors = $validator->getErrors();
 
         $errors = \array_map(static function (array $error): string {
             $property = '';
