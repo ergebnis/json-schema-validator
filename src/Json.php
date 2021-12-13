@@ -13,6 +13,9 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator;
 
+/**
+ * @psalm-immutable
+ */
 final class Json
 {
     private string $encoded;
