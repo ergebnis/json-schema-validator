@@ -12,6 +12,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 
 - Implemented `JsonPointer` ([#163]), by [@localheinz]
 - Implemented `Message` ([#164]), by [@localheinz]
+- Implemented `Error` ([#165]), by [@localheinz]
 
 ### Changed
 
@@ -50,5 +51,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#161]: https://github.com/ergebnis/json-schema-validator/pull/161
 [#163]: https://github.com/ergebnis/json-schema-validator/pull/163
 [#164]: https://github.com/ergebnis/json-schema-validator/pull/164
+[#165]: https://github.com/ergebnis/json-schema-validator/pull/165
 
 [@localheinz]: https://github.com/localheinz
