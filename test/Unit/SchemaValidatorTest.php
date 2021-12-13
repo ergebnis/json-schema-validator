@@ -13,7 +13,10 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
+use Ergebnis\Json\SchemaValidator\Error;
 use Ergebnis\Json\SchemaValidator\Json;
+use Ergebnis\Json\SchemaValidator\JsonPointer;
+use Ergebnis\Json\SchemaValidator\Message;
 use Ergebnis\Json\SchemaValidator\SchemaValidator;
 use Ergebnis\Json\SchemaValidator\Test;
 use PHPUnit\Framework;
@@ -23,7 +26,10 @@ use PHPUnit\Framework;
  *
  * @covers \Ergebnis\Json\SchemaValidator\SchemaValidator
  *
+ * @uses \Ergebnis\Json\SchemaValidator\Error
  * @uses \Ergebnis\Json\SchemaValidator\Json
+ * @uses \Ergebnis\Json\SchemaValidator\JsonPointer
+ * @uses \Ergebnis\Json\SchemaValidator\Message
  * @uses \Ergebnis\Json\SchemaValidator\Result
  */
 final class SchemaValidatorTest extends Framework\TestCase
@@ -80,15 +86,33 @@ JSON
         self::assertFalse($result->isValid());
 
         $expected = [
-            'name: The property name is required',
-            'email: The property email is required',
-            'The property number is not defined and the definition does not allow additional properties',
-            'The property street_name is not defined and the definition does not allow additional properties',
-            'The property street_type is not defined and the definition does not allow additional properties',
-            'The property direction is not defined and the definition does not allow additional properties',
+            Error::create(
+                JsonPointer::fromString('/name'),
+                Message::fromString('The property name is required'),
+            ),
+            Error::create(
+                JsonPointer::fromString('/email'),
+                Message::fromString('The property email is required'),
+            ),
+            Error::create(
+                JsonPointer::fromString(''),
+                Message::fromString('The property number is not defined and the definition does not allow additional properties'),
+            ),
+            Error::create(
+                JsonPointer::fromString(''),
+                Message::fromString('The property street_name is not defined and the definition does not allow additional properties'),
+            ),
+            Error::create(
+                JsonPointer::fromString(''),
+                Message::fromString('The property street_type is not defined and the definition does not allow additional properties'),
+            ),
+            Error::create(
+                JsonPointer::fromString(''),
+                Message::fromString('The property direction is not defined and the definition does not allow additional properties'),
+            ),
         ];
 
-        self::assertSame($expected, $result->errors());
+        self::assertEquals($expected, $result->errors());
     }
 
     public function testValidateReturnsResultWhenDataIsValidAccordingToSchema(): void

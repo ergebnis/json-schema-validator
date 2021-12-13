@@ -19,18 +19,18 @@ namespace Ergebnis\Json\SchemaValidator;
 final class Result
 {
     /**
-     * @psalm-var list<string>
+     * @psalm-var list<Error>
      *
-     * @var array<int, string>
+     * @var array<int, Error>
      */
     private array $errors;
 
-    private function __construct(string ...$errors)
+    private function __construct(Error ...$errors)
     {
         $this->errors = $errors;
     }
 
-    public static function create(string ...$errors): self
+    public static function create(Error ...$errors): self
     {
         return new self(...$errors);
     }
@@ -41,9 +41,9 @@ final class Result
     }
 
     /**
-     * @psalm-return list<string>
+     * @psalm-return list<Error>
      *
-     * @return array<int, string>
+     * @return array<int, Error>
      */
     public function errors(): array
     {

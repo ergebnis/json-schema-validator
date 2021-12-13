@@ -43,42 +43,13 @@ final class SchemaValidator
         /** @var array<int, array> $originalErrors */
         $originalErrors = $validator->getErrors();
 
-        $errors = \array_map(static function (array $error): string {
-            $property = '';
-
-            if (
-                \array_key_exists('property', $error)
-                && \is_string($error['property'])
-                && '' !== \trim($error['property'])
-            ) {
-                $property = \trim($error['property']);
-            }
-
-            $message = '';
-
-            if (
-                \array_key_exists('message', $error)
-                && \is_string($error['message'])
-                && '' !== \trim($error['message'])
-            ) {
-                $message = \trim($error['message']);
-            }
-
-            if ('' === $property) {
-                return $message;
-            }
-
-            return \sprintf(
-                '%s: %s',
-                $property,
-                $message,
+        $errors = \array_map(static function (array $error): Error {
+            return Error::create(
+                JsonPointer::fromString($error['pointer']),
+                Message::fromString($error['message']),
             );
         }, $originalErrors);
 
-        $filtered = \array_filter($errors, static function (string $error): bool {
-            return '' !== $error;
-        });
-
-        return Result::create(...$filtered);
+        return Result::create(...$errors);
     }
 }
