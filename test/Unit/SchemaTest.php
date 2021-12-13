@@ -51,7 +51,7 @@ JSON
 
         $schema = Schema::fromJson($json);
 
-        $decoded = \json_decode($json->encoded());
+        $decoded = \json_decode($json->toString());
 
         self::assertEquals($decoded, $schema->decoded());
     }
