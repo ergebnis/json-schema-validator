@@ -27,7 +27,10 @@ final class Decoder
             true,
         );
 
-        if (null === $decoded && \JSON_ERROR_NONE !== \json_last_error()) {
+        if (
+            null === $decoded
+            && \JSON_ERROR_NONE !== \json_last_error()
+        ) {
             throw Exception\InvalidJson::string();
         }
 

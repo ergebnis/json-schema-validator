@@ -20,14 +20,18 @@ final class SchemaValidator
     private Decoder $decoder;
     private Validator $validator;
 
-    public function __construct(Decoder $decoder, Validator $validator)
-    {
+    public function __construct(
+        Decoder $decoder,
+        Validator $validator
+    ) {
         $this->decoder = $decoder;
         $this->validator = $validator;
     }
 
-    public function validate(Json $json, Schema $schema): Result
-    {
+    public function validate(
+        Json $json,
+        Schema $schema
+    ): Result {
         $this->validator->reset();
 
         $this->validator->check(
