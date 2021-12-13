@@ -1,20 +1,24 @@
 {
   "name": "ergebnis/json-schema-validator",
-  "type": "library",
   "description": "Provides a JSON schema validator, building on top of justinrainbow/json-schema.",
+  "license": "MIT",
+  "type": "library",
   "keywords": [
     "json",
     "schema",
     "validator"
   ],
-  "homepage": "https://github.com/ergebnis/json-schema-validator",
-  "license": "MIT",
   "authors": [
     {
       "name": "Andreas Möller",
       "email": "am@localheinz.com"
     }
   ],
+  "homepage": "https://github.com/ergebnis/json-schema-validator",
+  "support": {
+    "issues": "https://github.com/ergebnis/json-schema-validator/issues",
+    "source": "https://github.com/ergebnis/json-schema-validator"
+  },
   "require": {
     "php": "^7.4 || ^8.0",
     "ext-json": "*",
@@ -29,6 +33,16 @@
     "psalm/plugin-phpunit": "~0.16.1",
     "vimeo/psalm": "^4.15.0"
   },
+  "autoload": {
+    "psr-4": {
+      "Ergebnis\\Json\\SchemaValidator\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ergebnis\\Json\\SchemaValidator\\Test\\": "test/"
+    }
+  },
   "config": {
     "platform": {
       "php": "7.4.26"
@@ -41,19 +55,5 @@
       "indent-size": 2,
       "indent-style": "space"
     }
-  },
-  "autoload": {
-    "psr-4": {
-      "Ergebnis\\Json\\SchemaValidator\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Ergebnis\\Json\\SchemaValidator\\Test\\": "test/"
-    }
-  },
-  "support": {
-    "issues": "https://github.com/ergebnis/json-schema-validator/issues",
-    "source": "https://github.com/ergebnis/json-schema-validator"
   }
 }
