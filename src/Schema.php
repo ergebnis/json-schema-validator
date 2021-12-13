@@ -15,7 +15,7 @@ namespace Ergebnis\Json\SchemaValidator;
 
 final class Schema
 {
-    private $decoded;
+    private \stdClass $decoded;
 
     private function __construct(\stdClass $decoded)
     {
