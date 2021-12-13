@@ -12,9 +12,10 @@
     </MixedPropertyTypeCoercion>
   </file>
   <file src="src/SchemaValidator.php">
-    <MixedArgument occurrences="2">
+    <MixedArgument occurrences="3">
       <code>$error['message']</code>
       <code>$error['pointer']</code>
+      <code>$schemaDecoded</code>
     </MixedArgument>
     <MixedAssignment occurrences="2">
       <code>$jsonDecoded</code>

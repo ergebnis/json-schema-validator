@@ -13,25 +13,61 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator;
 
+use Ergebnis\Json\SchemaValidator\Exception\CanNotResolve;
+use Ergebnis\Json\SchemaValidator\Exception\ResolvedToRootSchema;
+use JsonSchema\Constraints;
+use JsonSchema\Exception;
+use JsonSchema\SchemaStorage;
+use JsonSchema\Uri;
 use JsonSchema\Validator;
 
 final class SchemaValidator
 {
+    /**
+     * @throws CanNotResolve
+     * @throws ResolvedToRootSchema
+     */
     public function validate(
         Json $json,
-        Json $schema
+        Json $schema,
+        JsonPointer $jsonPointer
     ): Result {
-        $validator = new Validator();
-
-        $validator->reset();
-
-        $jsonDecoded = \json_decode(
-            $json->toString(),
+        $schemaDecoded = \json_decode(
+            $schema->toString(),
             false,
         );
 
-        $schemaDecoded = \json_decode(
-            $schema->toString(),
+        $uriRetriever = new Uri\UriRetriever();
+
+        if (!$jsonPointer->equals(JsonPointer::empty())) {
+            try {
+                $subSchemaDecoded = $uriRetriever->resolvePointer(
+                    $schemaDecoded,
+                    $jsonPointer->toString(),
+                );
+            } catch (Exception\ResourceNotFoundException $exception) {
+                throw CanNotResolve::jsonPointer($jsonPointer);
+            }
+
+            if ($schemaDecoded === $subSchemaDecoded) {
+                throw ResolvedToRootSchema::jsonPointer($jsonPointer);
+            }
+
+            $schemaDecoded = $subSchemaDecoded;
+        }
+
+        $schemaStorage = new SchemaStorage(
+            $uriRetriever,
+            new Uri\UriResolver(),
+        );
+
+        $validator = new Validator(new Constraints\Factory(
+            $schemaStorage,
+            $uriRetriever,
+        ));
+
+        $jsonDecoded = \json_decode(
+            $json->toString(),
             false,
         );
 

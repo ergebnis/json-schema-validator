@@ -39,6 +39,7 @@ use Ergebnis\Json\SchemaValidator;
 
 $json = SchemaValidator\Json::fromFile('composer.json');
 $schema = SchemaValidator\Json::fromString(file_get_contents('https://getcomposer.org/schema.json'));
+$jsonPointer = SchemaValidator\JsonPointer::empty();
 
 $schemaValidator = new SchemaValidator\SchemaValidator();
 
