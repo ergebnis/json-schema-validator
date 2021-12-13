@@ -13,12 +13,10 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\DataProvider;
 
-use Ergebnis\Test\Util;
+use Ergebnis\DataProvider;
 
-final class JsonProvider
+final class JsonProvider extends DataProvider\AbstractProvider
 {
-    use Util\Helper;
-
     /**
      * @return \Generator<string, array{0: string}>
      */
