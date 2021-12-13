@@ -25,11 +25,13 @@ final class SchemaValidator
 
         $validator->reset();
 
-        $validator->check(
-            \json_decode(
-                $json->toString(),
-                false,
-            ),
+        $jsonDecoded = \json_decode(
+            $json->toString(),
+            false,
+        );
+
+        $validator->validate(
+            $jsonDecoded,
             $schema->decoded(),
         );
 
