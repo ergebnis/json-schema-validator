@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="v4.15.0@a1b5e489e6fcebe40cb804793d964e99fc347820">
-  <file src="src/Decoder.php">
-    <MixedAssignment occurrences="2">
-      <code>$decoded</code>
-      <code>$decoded</code>
-    </MixedAssignment>
-    <MixedInferredReturnType occurrences="2">
-      <code>null|array|bool|float|int|\stdClass|string</code>
-      <code>null|array|bool|float|int|string</code>
-    </MixedInferredReturnType>
-    <MixedReturnStatement occurrences="2">
-      <code>$decoded</code>
-      <code>$decoded</code>
-    </MixedReturnStatement>
-  </file>
   <file src="src/Json.php">
     <MixedAssignment occurrences="2">
       <code>$decoded</code>
@@ -30,12 +16,6 @@
       <code>\Generator&lt;string, array{0: string}&gt;</code>
       <code>\Generator&lt;string, array{0: string}&gt;</code>
     </MoreSpecificReturnType>
-  </file>
-  <file src="test/Unit/DecoderTest.php">
-    <MixedAssignment occurrences="2">
-      <code>$expected</code>
-      <code>$expected</code>
-    </MixedAssignment>
   </file>
   <file src="test/Unit/SchemaTest.php">
     <MixedAssignment occurrences="1">

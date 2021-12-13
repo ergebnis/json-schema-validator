@@ -12,6 +12,7 @@ For a full diff see [`1.0.0...main`][1.0.0...main].
 
 - Dropped support for PHP 7.3 ([#137]), by [@localheinz]
 - Renamed `Json::encoded()` to `Json::toString()` ([#155]), by [@localheinz]
+- Inlined `Decoder` into `SchemaValidator` ([#157]), by [@localheinz]
 
 ## [`1.0.0`][1.0.0]
 
@@ -37,5 +38,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#8]: https://github.com/ergebnis/json-schema-validator/pull/8
 [#137]: https://github.com/ergebnis/json-schema-validator/pull/137
 [#155]: https://github.com/ergebnis/json-schema-validator/pull/155
+[#157]: https://github.com/ergebnis/json-schema-validator/pull/157
 
 [@localheinz]: https://github.com/localheinz

@@ -17,14 +17,10 @@ use JsonSchema\Validator;
 
 final class SchemaValidator
 {
-    private Decoder $decoder;
     private Validator $validator;
 
-    public function __construct(
-        Decoder $decoder,
-        Validator $validator
-    ) {
-        $this->decoder = $decoder;
+    public function __construct(Validator $validator)
+    {
         $this->validator = $validator;
     }
 
@@ -35,7 +31,10 @@ final class SchemaValidator
         $this->validator->reset();
 
         $this->validator->check(
-            $this->decoder->decodeNonAssociative($json->toString()),
+            \json_decode(
+                $json->toString(),
+                false,
+            ),
             $schema->decoded(),
         );
 
