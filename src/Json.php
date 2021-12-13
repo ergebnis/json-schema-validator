@@ -30,12 +30,14 @@ final class Json
      */
     public static function fromString(string $value): self
     {
-        $decoded = \json_decode($value);
-
-        if (
-            null === $decoded
-            && \JSON_ERROR_NONE !== \json_last_error()
-        ) {
+        try {
+            \json_decode(
+                $value,
+                true,
+                512,
+                \JSON_THROW_ON_ERROR,
+            );
+        } catch (\JsonException $exception) {
             throw Exception\InvalidJson::string();
         }
 
@@ -59,12 +61,14 @@ final class Json
             throw Exception\CanNotBeRead::file($file);
         }
 
-        $decoded = \json_decode($value);
-
-        if (
-            null === $decoded
-            && \JSON_ERROR_NONE !== \json_last_error()
-        ) {
+        try {
+            \json_decode(
+                $value,
+                true,
+                512,
+                \JSON_THROW_ON_ERROR,
+            );
+        } catch (\JsonException $exception) {
             throw Exception\InvalidJson::file($file);
         }
 
