@@ -55,7 +55,7 @@ jobs:
               "ergebnis-bot",
             ]
 
-            await github.issues.addAssignees({
+            await github.rest.issues.addAssignees({
               owner: repository.owner,
               repo: repository.repo,
               assignees: assignees,
