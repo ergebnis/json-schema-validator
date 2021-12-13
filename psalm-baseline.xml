@@ -6,11 +6,6 @@
       <code>\json_decode</code>
     </UnusedFunctionCall>
   </file>
-  <file src="src/Result.php">
-    <MixedPropertyTypeCoercion occurrences="1">
-      <code>$errors</code>
-    </MixedPropertyTypeCoercion>
-  </file>
   <file src="src/SchemaValidator.php">
     <MixedArgument occurrences="3">
       <code>$error['message']</code>
@@ -21,6 +16,11 @@
       <code>$jsonDecoded</code>
       <code>$schemaDecoded</code>
     </MixedAssignment>
+  </file>
+  <file src="src/ValidationResult.php">
+    <MixedPropertyTypeCoercion occurrences="1">
+      <code>$errors</code>
+    </MixedPropertyTypeCoercion>
   </file>
   <file src="test/DataProvider/JsonProvider.php">
     <MoreSpecificReturnType occurrences="2">

@@ -15,33 +15,33 @@ namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\Json\SchemaValidator\JsonPointer;
 use Ergebnis\Json\SchemaValidator\Message;
-use Ergebnis\Json\SchemaValidator\Result;
 use Ergebnis\Json\SchemaValidator\Test;
 use Ergebnis\Json\SchemaValidator\ValidationError;
+use Ergebnis\Json\SchemaValidator\ValidationResult;
 use PHPUnit\Framework;
 
 /**
  * @internal
  *
- * @covers \Ergebnis\Json\SchemaValidator\Result
+ * @covers \Ergebnis\Json\SchemaValidator\ValidationResult
  *
  * @uses \Ergebnis\Json\SchemaValidator\JsonPointer
  * @uses \Ergebnis\Json\SchemaValidator\Message
  * @uses \Ergebnis\Json\SchemaValidator\ValidationError
  */
-final class ResultTest extends Framework\TestCase
+final class ValidationResultTest extends Framework\TestCase
 {
     use Test\Util\Helper;
 
-    public function testCreateReturnsResultWithoutErrors(): void
+    public function testCreateReturnsValidationResultWithoutErrors(): void
     {
-        $result = Result::create();
+        $validationResult = ValidationResult::create();
 
-        self::assertTrue($result->isValid());
-        self::assertSame([], $result->errors());
+        self::assertTrue($validationResult->isValid());
+        self::assertSame([], $validationResult->errors());
     }
 
-    public function testCreateReturnsResultWithErrors(): void
+    public function testCreateReturnsValidationResultWithErrors(): void
     {
         $faker = self::faker();
 
@@ -60,9 +60,9 @@ final class ResultTest extends Framework\TestCase
             ),
         ];
 
-        $result = Result::create(...$errors);
+        $validationResult = ValidationResult::create(...$errors);
 
-        self::assertFalse($result->isValid());
-        self::assertSame($errors, $result->errors());
+        self::assertFalse($validationResult->isValid());
+        self::assertSame($errors, $validationResult->errors());
     }
 }

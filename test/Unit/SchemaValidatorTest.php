@@ -32,8 +32,8 @@ use PHPUnit\Framework;
  * @uses \Ergebnis\Json\SchemaValidator\Json
  * @uses \Ergebnis\Json\SchemaValidator\JsonPointer
  * @uses \Ergebnis\Json\SchemaValidator\Message
- * @uses \Ergebnis\Json\SchemaValidator\Result
  * @uses \Ergebnis\Json\SchemaValidator\ValidationError
+ * @uses \Ergebnis\Json\SchemaValidator\ValidationResult
  */
 final class SchemaValidatorTest extends Framework\TestCase
 {

@@ -16,7 +16,7 @@ namespace Ergebnis\Json\SchemaValidator;
 /**
  * @psalm-immutable
  */
-final class Result
+final class ValidationResult
 {
     /**
      * @psalm-var list<ValidationError>
