@@ -18,7 +18,6 @@ use JsonSchema\Validator;
 final class SchemaValidator
 {
     private $decoder;
-
     private $validator;
 
     public function __construct(Decoder $decoder, Validator $validator)
