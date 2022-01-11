@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "697277dc5773b65081aa03eda496fd71",
+    "content-hash": "a371de1c1f6746dcf1046720c259895d",
     "packages": [
         {
             "name": "justinrainbow/json-schema",
@@ -1617,16 +1617,16 @@
         },
         {
             "name": "infection/infection",
-            "version": "0.26.0",
+            "version": "0.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/infection/infection.git",
-                "reference": "e346a2ff4ebe277f3f4e8cc295c033dcab13e7f0"
+                "reference": "1e584ea134a1bd3065c1305e14fe3382b30eb2a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/infection/infection/zipball/e346a2ff4ebe277f3f4e8cc295c033dcab13e7f0",
-                "reference": "e346a2ff4ebe277f3f4e8cc295c033dcab13e7f0",
+                "url": "https://api.github.com/repos/infection/infection/zipball/1e584ea134a1bd3065c1305e14fe3382b30eb2a9",
+                "reference": "1e584ea134a1bd3065c1305e14fe3382b30eb2a9",
                 "shasum": ""
             },
             "require": {
@@ -1727,7 +1727,7 @@
             ],
             "support": {
                 "issues": "https://github.com/infection/infection/issues",
-                "source": "https://github.com/infection/infection/tree/0.26.0"
+                "source": "https://github.com/infection/infection/tree/0.26.1"
             },
             "funding": [
                 {
@@ -1739,7 +1739,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2022-01-10T10:25:48+00:00"
+            "time": "2022-01-11T20:49:25+00:00"
         },
         {
             "name": "localheinz/diff",
