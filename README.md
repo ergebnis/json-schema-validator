@@ -35,6 +35,8 @@ This package delegates the validation to `justinrainbow/json-schema` and provide
 ```php
 <?php
 
+declare(strict_types=1);
+
 use Ergebnis\Json\SchemaValidator;
 
 $json = SchemaValidator\Json::fromFile('composer.json');
