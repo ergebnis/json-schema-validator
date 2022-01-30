@@ -253,7 +253,7 @@ final class SchemaValidatorTest extends Framework\TestCase
         );
     }
 
-    public function testValidateThrowsResolvedToRootSchemaWhenJsonPointerIsNotEmptyAndSubSchemaWasResolvedToRootSchema(): void
+    public function testValidateThrowsCanNotResolveWhenJsonPointerIsNotEmptyButCouldNotBeParsedAsUriFragmentIdentifierString(): void
     {
         $faker = self::faker();
 
@@ -292,7 +292,7 @@ final class SchemaValidatorTest extends Framework\TestCase
 
         $schemaValidator = new SchemaValidator();
 
-        $this->expectException(Exception\ResolvedToRootSchema::class);
+        $this->expectException(Exception\CanNotResolve::class);
 
         $schemaValidator->validate(
             $data,
