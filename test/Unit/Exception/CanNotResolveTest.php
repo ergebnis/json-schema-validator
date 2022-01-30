@@ -28,7 +28,7 @@ final class CanNotResolveTest extends Framework\TestCase
 {
     public function testJsonPointerReturnsException(): void
     {
-        $jsonPointer = JsonPointer::fromString('/foo/bar');
+        $jsonPointer = JsonPointer::fromString('#/foo/bar');
 
         $exception = Exception\CanNotResolve::jsonPointer($jsonPointer);
 

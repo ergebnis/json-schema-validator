@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace Ergebnis\Json\SchemaValidator;
 
 use Ergebnis\Json\SchemaValidator\Exception\CanNotResolve;
-use Ergebnis\Json\SchemaValidator\Exception\ResolvedToRootSchema;
 use JsonSchema\Constraints;
 use JsonSchema\Exception;
 use JsonSchema\SchemaStorage;
@@ -25,7 +24,6 @@ final class SchemaValidator
 {
     /**
      * @throws CanNotResolve
-     * @throws ResolvedToRootSchema
      */
     public function validate(
         Json $json,
@@ -50,7 +48,7 @@ final class SchemaValidator
             }
 
             if ($schemaDecoded === $subSchemaDecoded) {
-                throw ResolvedToRootSchema::jsonPointer($jsonPointer);
+                throw CanNotResolve::jsonPointer($jsonPointer);
             }
 
             $schemaDecoded = $subSchemaDecoded;
