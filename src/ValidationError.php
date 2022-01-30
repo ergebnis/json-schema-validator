@@ -13,16 +13,18 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator;
 
+use Ergebnis\Json\Pointer;
+
 /**
  * @psalm-immutable
  */
 final class ValidationError
 {
-    private JsonPointer $jsonPointer;
+    private Pointer\JsonPointer $jsonPointer;
     private Message $message;
 
     private function __construct(
-        JsonPointer $jsonPointer,
+        Pointer\JsonPointer $jsonPointer,
         Message $message
     ) {
         $this->jsonPointer = $jsonPointer;
@@ -30,7 +32,7 @@ final class ValidationError
     }
 
     public static function create(
-        JsonPointer $jsonPointer,
+        Pointer\JsonPointer $jsonPointer,
         Message $message
     ): self {
         return new self(
@@ -39,7 +41,7 @@ final class ValidationError
         );
     }
 
-    public function jsonPointer(): JsonPointer
+    public function jsonPointer(): Pointer\JsonPointer
     {
         return $this->jsonPointer;
     }

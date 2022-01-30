@@ -13,15 +13,15 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Exception;
 
-use Ergebnis\Json\SchemaValidator;
+use Ergebnis\Json\Pointer;
 
 final class CanNotResolve extends \InvalidArgumentException
 {
-    public static function jsonPointer(SchemaValidator\JsonPointer $jsonPointer): self
+    public static function jsonPointer(Pointer\JsonPointer $jsonPointer): self
     {
         return new self(\sprintf(
             'Can not resolve JSON pointer "%s".',
-            $jsonPointer->toString(),
+            $jsonPointer->toJsonString(),
         ));
     }
 }
