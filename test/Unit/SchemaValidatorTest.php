@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
+use Ergebnis\Json\Pointer;
 use Ergebnis\Json\SchemaValidator\Exception;
 use Ergebnis\Json\SchemaValidator\Json;
-use Ergebnis\Json\SchemaValidator\JsonPointer;
 use Ergebnis\Json\SchemaValidator\Message;
 use Ergebnis\Json\SchemaValidator\SchemaValidator;
 use Ergebnis\Json\SchemaValidator\Test;
@@ -29,7 +29,6 @@ use PHPUnit\Framework;
  *
  * @uses \Ergebnis\Json\SchemaValidator\Exception\CanNotResolve
  * @uses \Ergebnis\Json\SchemaValidator\Json
- * @uses \Ergebnis\Json\SchemaValidator\JsonPointer
  * @uses \Ergebnis\Json\SchemaValidator\Message
  * @uses \Ergebnis\Json\SchemaValidator\ValidationError
  * @uses \Ergebnis\Json\SchemaValidator\ValidationResult
@@ -38,7 +37,7 @@ final class SchemaValidatorTest extends Framework\TestCase
 {
     use Test\Util\Helper;
 
-    public function testValidateReturnsResultWhenJsonIsValidAccordingToSchemaAndJsonPointerIsEmpty(): void
+    public function testValidateReturnsResultWhenJsonIsValidAccordingToSchemaAndJsonPointerRefersToDocument(): void
     {
         $faker = self::faker();
 
@@ -75,7 +74,7 @@ final class SchemaValidatorTest extends Framework\TestCase
             'type' => 'object',
         ]));
 
-        $jsonPointer = JsonPointer::empty();
+        $jsonPointer = Pointer\JsonPointer::document();
 
         $schemaValidator = new SchemaValidator();
 
@@ -88,7 +87,7 @@ final class SchemaValidatorTest extends Framework\TestCase
         self::assertTrue($result->isValid());
     }
 
-    public function testValidateReturnsResultWhenJsonIsNotValidAccordingToSchemaAndJsonPointerIsEmpty(): void
+    public function testValidateReturnsResultWhenJsonIsNotValidAccordingToSchemaAndJsonPointerRefersToDocument(): void
     {
         $faker = self::faker();
 
@@ -126,7 +125,7 @@ final class SchemaValidatorTest extends Framework\TestCase
             'type' => 'object',
         ]));
 
-        $jsonPointer = JsonPointer::empty();
+        $jsonPointer = Pointer\JsonPointer::document();
 
         $schemaValidator = new SchemaValidator();
 
@@ -140,15 +139,15 @@ final class SchemaValidatorTest extends Framework\TestCase
 
         $expected = [
             ValidationError::create(
-                JsonPointer::fromString('/foo/bar'),
+                Pointer\JsonPointer::fromJsonString('/foo/bar'),
                 Message::fromString('Integer value found, but a boolean is required'),
             ),
             ValidationError::create(
-                JsonPointer::fromString('/foo/baz'),
+                Pointer\JsonPointer::fromJsonString('/foo/baz'),
                 Message::fromString('String value found, but an array is required'),
             ),
             ValidationError::create(
-                JsonPointer::empty(),
+                Pointer\JsonPointer::document(),
                 Message::fromString('The property qux is not defined and the definition does not allow additional properties'),
             ),
         ];
@@ -156,7 +155,7 @@ final class SchemaValidatorTest extends Framework\TestCase
         self::assertEquals($expected, $result->errors());
     }
 
-    public function testValidateReturnsResultWhenJsonIsValidAccordingToSchemaAndJsonPointerIsNotEmpty(): void
+    public function testValidateReturnsResultWhenJsonIsValidAccordingToSchemaAndJsonPointerDoesNotReferToDocument(): void
     {
         $faker = self::faker();
 
@@ -191,7 +190,7 @@ final class SchemaValidatorTest extends Framework\TestCase
             'type' => 'object',
         ]));
 
-        $jsonPointer = JsonPointer::fromString('#/properties/foo');
+        $jsonPointer = Pointer\JsonPointer::fromUriFragmentIdentifierString('#/properties/foo');
 
         $schemaValidator = new SchemaValidator();
 
@@ -204,7 +203,7 @@ final class SchemaValidatorTest extends Framework\TestCase
         self::assertTrue($result->isValid());
     }
 
-    public function testValidateThrowsCanNotResolveWhenJsonPointerIsNotEmptyAndSubSchemaCouldNotBeResolved(): void
+    public function testValidateThrowsCanNotResolveWhenJsonPointerDoesNotReferToDocumentAndSubSchemaCouldNotBeResolved(): void
     {
         $faker = self::faker();
 
@@ -239,7 +238,7 @@ final class SchemaValidatorTest extends Framework\TestCase
             'type' => 'object',
         ]));
 
-        $jsonPointer = JsonPointer::fromString('#/properties/qux');
+        $jsonPointer = Pointer\JsonPointer::fromUriFragmentIdentifierString('#/properties/qux');
 
         $schemaValidator = new SchemaValidator();
 
@@ -252,55 +251,7 @@ final class SchemaValidatorTest extends Framework\TestCase
         );
     }
 
-    public function testValidateThrowsCanNotResolveWhenJsonPointerIsNotEmptyButCouldNotBeParsedAsUriFragmentIdentifierString(): void
-    {
-        $faker = self::faker();
-
-        $data = Json::fromString(\json_encode([
-            'bar' => $faker->boolean(),
-            'baz' => $faker->words(),
-        ]));
-
-        $schema = Json::fromString(\json_encode([
-            'additionalProperties' => false,
-            'properties' => [
-                'foo' => [
-                    'additionalProperties' => false,
-                    'properties' => [
-                        'bar' => [
-                            'type' => 'boolean',
-                        ],
-                        'baz' => [
-                            'type' => 'array',
-                        ],
-                    ],
-                    'required' => [
-                        'bar',
-                        'baz',
-                    ],
-                    'type' => 'object',
-                ],
-            ],
-            'required' => [
-                'foo',
-            ],
-            'type' => 'object',
-        ]));
-
-        $jsonPointer = JsonPointer::fromString('/properties/qux');
-
-        $schemaValidator = new SchemaValidator();
-
-        $this->expectException(Exception\CanNotResolve::class);
-
-        $schemaValidator->validate(
-            $data,
-            $schema,
-            $jsonPointer,
-        );
-    }
-
-    public function testValidateReturnsResultWhenJsonIsNotValidAccordingToSchemaAndJsonPathIsNotEmpty(): void
+    public function testValidateReturnsResultWhenJsonIsNotValidAccordingToSchemaAndJsonPointerDoesNotReferToDocument(): void
     {
         $faker = self::faker();
 
@@ -335,7 +286,7 @@ final class SchemaValidatorTest extends Framework\TestCase
             'type' => 'object',
         ]));
 
-        $jsonPointer = JsonPointer::fromString('#/properties/foo');
+        $jsonPointer = Pointer\JsonPointer::fromUriFragmentIdentifierString('#/properties/foo');
 
         $schemaValidator = new SchemaValidator();
 
@@ -349,11 +300,11 @@ final class SchemaValidatorTest extends Framework\TestCase
 
         $expected = [
             ValidationError::create(
-                JsonPointer::fromString('/bar'),
+                Pointer\JsonPointer::fromJsonString('/bar'),
                 Message::fromString('String value found, but a boolean is required'),
             ),
             ValidationError::create(
-                JsonPointer::fromString('/baz'),
+                Pointer\JsonPointer::fromJsonString('/baz'),
                 Message::fromString('Boolean value found, but an array is required'),
             ),
         ];

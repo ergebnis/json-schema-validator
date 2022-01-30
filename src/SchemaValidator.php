@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator;
 
+use Ergebnis\Json\Pointer;
 use Ergebnis\Json\SchemaValidator\Exception\CanNotResolve;
 use JsonSchema\Constraints;
 use JsonSchema\Exception;
@@ -28,7 +29,7 @@ final class SchemaValidator
     public function validate(
         Json $json,
         Json $schema,
-        JsonPointer $jsonPointer
+        Pointer\JsonPointer $jsonPointer
     ): ValidationResult {
         $schemaDecoded = \json_decode(
             $schema->toString(),
@@ -37,17 +38,13 @@ final class SchemaValidator
 
         $uriRetriever = new Uri\UriRetriever();
 
-        if (!$jsonPointer->equals(JsonPointer::empty())) {
+        if (!$jsonPointer->equals(Pointer\JsonPointer::document())) {
             try {
                 $subSchemaDecoded = $uriRetriever->resolvePointer(
                     $schemaDecoded,
-                    $jsonPointer->toString(),
+                    $jsonPointer->toUriFragmentIdentifierString(),
                 );
             } catch (Exception\ResourceNotFoundException $exception) {
-                throw CanNotResolve::jsonPointer($jsonPointer);
-            }
-
-            if ($schemaDecoded === $subSchemaDecoded) {
                 throw CanNotResolve::jsonPointer($jsonPointer);
             }
 
@@ -79,7 +76,7 @@ final class SchemaValidator
 
         $validationErrors = \array_map(static function (array $error): ValidationError {
             return ValidationError::create(
-                JsonPointer::fromString($error['pointer']),
+                Pointer\JsonPointer::fromJsonString($error['pointer']),
                 Message::fromString($error['message']),
             );
         }, $originalErrors);

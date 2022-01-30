@@ -13,28 +13,26 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\Unit\Exception;
 
+use Ergebnis\Json\Pointer;
 use Ergebnis\Json\SchemaValidator\Exception;
-use Ergebnis\Json\SchemaValidator\JsonPointer;
 use PHPUnit\Framework;
 
 /**
  * @internal
  *
  * @covers \Ergebnis\Json\SchemaValidator\Exception\CanNotResolve
- *
- * @uses \Ergebnis\Json\SchemaValidator\JsonPointer
  */
 final class CanNotResolveTest extends Framework\TestCase
 {
     public function testJsonPointerReturnsException(): void
     {
-        $jsonPointer = JsonPointer::fromString('#/foo/bar');
+        $jsonPointer = Pointer\JsonPointer::fromUriFragmentIdentifierString('#/foo/bar');
 
         $exception = Exception\CanNotResolve::jsonPointer($jsonPointer);
 
         $expected = \sprintf(
             'Can not resolve JSON pointer "%s".',
-            $jsonPointer->toString(),
+            $jsonPointer->toJsonString(),
         );
 
         self::assertSame($expected, $exception->getMessage());
