@@ -8,10 +8,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`2.0.0...main`][2.0.0...main].
 
+## [`3.0.0`][3.0.0]
+
+For a full diff see [`2.0.0...3.0.0`][2.0.0...3.0.0].
+
 ### Changed
 
 - Required [`ergebnis/json-pointer`](https://github.com/ergebnis/json-pointer) ([#195]), by [@localheinz]
 - Started throwing an `Exception\CanNotResolve` exception instead of an `Exception\ResolvedToRootSchema` when the `JsonPointer` is not a valid URI fragment identifier representation of a JSON pointer ([#202]), by [@localheinz]
+
+### Removed
+
+- Removed `Exception\ResolvedToRootSchema` ([#203]), by [@localheinz]
 
 ## [`2.0.0`][2.0.0]
 
@@ -49,10 +57,12 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 
 [1.0.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/1.0.0
 [2.0.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/2.0.0
+[3.0.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/3.0.0
 
 [dcd4cfb...1.0.0]: https://github.com/ergebnis/json-schema-validator/compare/dcd4cfb...1.0.0
 [1.0.0...2.0.0]: https://github.com/ergebnis/json-schema-validator/compare/1.0.0...2.0.0
-[2.0.0...main]: https://github.com/ergebnis/json-schema-validator/compare/2.0.0...main
+[2.0.0...3.0.0]: https://github.com/ergebnis/json-schema-validator/compare/2.0.0...3.0.0
+[3.0.0...main]: https://github.com/ergebnis/json-schema-validator/compare/3.0.0...main
 
 [#2]: https://github.com/ergebnis/json-schema-validator/pull/2
 [#3]: https://github.com/ergebnis/json-schema-validator/pull/3
@@ -73,5 +83,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#172]: https://github.com/ergebnis/json-schema-validator/pull/172
 [#195]: https://github.com/ergebnis/json-schema-validator/pull/195
 [#202]: https://github.com/ergebnis/json-schema-validator/pull/202
+[#203]: https://github.com/ergebnis/json-schema-validator/pull/203
 
 [@localheinz]: https://github.com/localheinz

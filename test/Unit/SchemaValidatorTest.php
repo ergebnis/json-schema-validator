@@ -28,7 +28,6 @@ use PHPUnit\Framework;
  * @covers \Ergebnis\Json\SchemaValidator\SchemaValidator
  *
  * @uses \Ergebnis\Json\SchemaValidator\Exception\CanNotResolve
- * @uses \Ergebnis\Json\SchemaValidator\Exception\ResolvedToRootSchema
  * @uses \Ergebnis\Json\SchemaValidator\Json
  * @uses \Ergebnis\Json\SchemaValidator\JsonPointer
  * @uses \Ergebnis\Json\SchemaValidator\Message
