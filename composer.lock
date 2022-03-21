@@ -4,35 +4,35 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b8f67684ca29d081b5331e2e1e83043",
+    "content-hash": "daeed0eab70b0eeb88e7ec0f8f5874d0",
     "packages": [
         {
             "name": "ergebnis/json-pointer",
-            "version": "2.1.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-pointer.git",
-                "reference": "303ee788749298459f3ae9ca47f60fdea8419d0e"
+                "reference": "0e3afdc440d5bb955d8450968451b935b9ce3592"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-pointer/zipball/303ee788749298459f3ae9ca47f60fdea8419d0e",
-                "reference": "303ee788749298459f3ae9ca47f60fdea8419d0e",
+                "url": "https://api.github.com/repos/ergebnis/json-pointer/zipball/0e3afdc440d5bb955d8450968451b935b9ce3592",
+                "reference": "0e3afdc440d5bb955d8450968451b935b9ce3592",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.23.0",
-                "ergebnis/data-provider": "^1.1.0",
+                "ergebnis/composer-normalize": "^2.24.1",
+                "ergebnis/data-provider": "^1.2.0",
                 "ergebnis/license": "^1.2.0",
-                "ergebnis/php-cs-fixer-config": "^4.0.0",
-                "fakerphp/faker": "^1.18.0",
-                "infection/infection": "~0.26.4",
-                "phpunit/phpunit": "^9.5.13",
+                "ergebnis/php-cs-fixer-config": "^4.4.0",
+                "fakerphp/faker": "^1.19.0",
+                "infection/infection": "~0.26.6",
+                "phpunit/phpunit": "^9.5.19",
                 "psalm/plugin-phpunit": "~0.16.1",
-                "vimeo/psalm": "^4.19"
+                "vimeo/psalm": "^4.22"
             },
             "type": "library",
             "extra": {
@@ -73,7 +73,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-30T10:13:42+00:00"
+            "time": "2022-03-21T10:02:16+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
