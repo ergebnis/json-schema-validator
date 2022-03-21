@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`2.0.0...main`][2.0.0...main].
 
+### Changed
+
+- Required `ergebnis/json-pointer:^3.0.0` ([#226]), by [@dependabot]
+
 ## [`3.0.0`][3.0.0]
 
 For a full diff see [`2.0.0...3.0.0`][2.0.0...3.0.0].
@@ -86,5 +90,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#200]: https://github.com/ergebnis/json-schema-validator/pull/200
 [#202]: https://github.com/ergebnis/json-schema-validator/pull/202
 [#203]: https://github.com/ergebnis/json-schema-validator/pull/203
+[#226]: https://github.com/ergebnis/json-schema-validator/pull/226
 
 [@localheinz]: https://github.com/localheinz
