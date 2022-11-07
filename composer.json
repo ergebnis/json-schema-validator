@@ -23,7 +23,7 @@
     "php": "^7.4 || ^8.0",
     "ext-json": "*",
     "ergebnis/json-pointer": "^3.0.0",
-    "justinrainbow/json-schema": "^5.2.10"
+    "justinrainbow/json-schema": "^5.2.12"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.21.0",
