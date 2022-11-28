@@ -20,7 +20,7 @@
     "source": "https://github.com/ergebnis/json-schema-validator"
   },
   "require": {
-    "php": "^7.4 || ^8.0",
+    "php": "^8.0",
     "ext-json": "*",
     "ergebnis/json-pointer": "^3.0.0",
     "justinrainbow/json-schema": "^5.2.12"
@@ -52,7 +52,7 @@
       "infection/extension-installer": true
     },
     "platform": {
-      "php": "7.4.26"
+      "php": "8.0.25"
     },
     "preferred-install": "dist",
     "sort-packages": true
