@@ -29,7 +29,7 @@ final class SchemaValidator
     public function validate(
         Json $json,
         Json $schema,
-        Pointer\JsonPointer $jsonPointer
+        Pointer\JsonPointer $jsonPointer,
     ): ValidationResult {
         $schemaDecoded = \json_decode(
             $schema->toString(),

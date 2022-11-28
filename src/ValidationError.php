@@ -25,7 +25,7 @@ final class ValidationError
 
     private function __construct(
         Pointer\JsonPointer $jsonPointer,
-        Message $message
+        Message $message,
     ) {
         $this->jsonPointer = $jsonPointer;
         $this->message = $message;
@@ -33,7 +33,7 @@ final class ValidationError
 
     public static function create(
         Pointer\JsonPointer $jsonPointer,
-        Message $message
+        Message $message,
     ): self {
         return new self(
             $jsonPointer,
