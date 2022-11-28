@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf0737a00c64d15f237ca86acf8390d8",
+    "content-hash": "c4e791d7f532d70cec57503e1f777b83",
     "packages": [
         {
             "name": "ergebnis/json-pointer",
-            "version": "3.0.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-pointer.git",
-                "reference": "0e3afdc440d5bb955d8450968451b935b9ce3592"
+                "reference": "f762a112784ab0ffc81d6aca4ff5308fed6d287d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-pointer/zipball/0e3afdc440d5bb955d8450968451b935b9ce3592",
-                "reference": "0e3afdc440d5bb955d8450968451b935b9ce3592",
+                "url": "https://api.github.com/repos/ergebnis/json-pointer/zipball/f762a112784ab0ffc81d6aca4ff5308fed6d287d",
+                "reference": "f762a112784ab0ffc81d6aca4ff5308fed6d287d",
                 "shasum": ""
             },
             "require": {
@@ -73,7 +73,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-21T10:02:16+00:00"
+            "time": "2022-03-21T13:24:23+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
