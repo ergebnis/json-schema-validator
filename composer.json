@@ -22,7 +22,7 @@
   "require": {
     "php": "^8.0",
     "ext-json": "*",
-    "ergebnis/json": "^1.0.0",
+    "ergebnis/json": "^1.0.1",
     "ergebnis/json-pointer": "^3.2.0",
     "justinrainbow/json-schema": "^5.2.12"
   },
