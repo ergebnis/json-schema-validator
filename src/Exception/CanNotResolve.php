@@ -15,7 +15,7 @@ namespace Ergebnis\Json\SchemaValidator\Exception;
 
 use Ergebnis\Json\Pointer;
 
-final class CanNotResolve extends \InvalidArgumentException
+final class CanNotResolve extends \InvalidArgumentException implements Exception
 {
     public static function jsonPointer(Pointer\JsonPointer $jsonPointer): self
     {

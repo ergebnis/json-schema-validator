@@ -13,10 +13,6 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Exception;
 
-final class InvalidSchema extends \InvalidArgumentException implements Exception
+interface Exception extends \Throwable
 {
-    public static function notAnObject(): self
-    {
-        return new self('Value does not appear to be a valid JSON schema.');
-    }
 }
