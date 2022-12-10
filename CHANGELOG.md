@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`3.2.0...main`][3.2.0...main].
 
+### Removed
+
+- Started using `ergebnis/json` and removed `Json`, `Exception\CanNotBeRead`, `Exception\DoesNotExist`, and `Exception\InvalidJson` ([#292]), by [@localheinz]
+
 ## [`3.2.0`][3.2.0]
 
 For a full diff see [`3.1.0...3.2.0`][3.1.0...3.2.0].

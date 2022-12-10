@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator;
 
+use Ergebnis\Json\Json;
 use Ergebnis\Json\Pointer;
 use Ergebnis\Json\SchemaValidator\Exception\CanNotResolve;
 use JsonSchema\Constraints;

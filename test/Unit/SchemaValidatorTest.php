@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
+use Ergebnis\Json\Json;
 use Ergebnis\Json\Pointer;
 use Ergebnis\Json\SchemaValidator\Exception;
-use Ergebnis\Json\SchemaValidator\Json;
 use Ergebnis\Json\SchemaValidator\Message;
 use Ergebnis\Json\SchemaValidator\SchemaValidator;
 use Ergebnis\Json\SchemaValidator\Test;
@@ -28,7 +28,6 @@ use PHPUnit\Framework;
  * @covers \Ergebnis\Json\SchemaValidator\SchemaValidator
  *
  * @uses \Ergebnis\Json\SchemaValidator\Exception\CanNotResolve
- * @uses \Ergebnis\Json\SchemaValidator\Json
  * @uses \Ergebnis\Json\SchemaValidator\Message
  * @uses \Ergebnis\Json\SchemaValidator\ValidationError
  * @uses \Ergebnis\Json\SchemaValidator\ValidationResult
