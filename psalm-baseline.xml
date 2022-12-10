@@ -16,10 +16,4 @@
       <code>$errors</code>
     </MixedPropertyTypeCoercion>
   </file>
-  <file src="test/DataProvider/JsonProvider.php">
-    <MoreSpecificReturnType occurrences="2">
-      <code>\Generator&lt;string, array{0: string}&gt;</code>
-      <code>\Generator&lt;string, array{0: string}&gt;</code>
-    </MoreSpecificReturnType>
-  </file>
 </files>
