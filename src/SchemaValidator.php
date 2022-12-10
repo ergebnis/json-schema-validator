@@ -45,7 +45,7 @@ final class SchemaValidator
                     $schemaDecoded,
                     $jsonPointer->toUriFragmentIdentifierString(),
                 );
-            } catch (Exception\ResourceNotFoundException $exception) {
+            } catch (Exception\ResourceNotFoundException) {
                 throw CanNotResolve::jsonPointer($jsonPointer);
             }
 
