@@ -19,7 +19,7 @@ Provides a JSON schema validator, building on top of [`justinrainbow/json-schema
 Run
 
 ```sh
-$ composer require ergebnis/json-schema-validator
+composer require ergebnis/json-schema-validator
 ```
 
 ## Usage
@@ -75,6 +75,6 @@ This package is licensed using the MIT License.
 
 Please have a look at [`LICENSE.md`](LICENSE.md).
 
-## Curious what I am building?
+## Curious what I am up to?
 
-:mailbox_with_mail: [Subscribe to my list](https://localheinz.com/projects/), and I will occasionally send you an email to let you know what I am working on.
+Follow me on [Twitter](https://twitter.com/localheinz)!
