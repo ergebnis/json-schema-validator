@@ -27,7 +27,7 @@ final class ValidationResult
 
     private function __construct(ValidationError ...$errors)
     {
-        $this->errors = $errors;
+        $this->errors = \array_values($errors);
     }
 
     public static function create(ValidationError ...$errors): self
