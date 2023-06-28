@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.4.0@62db5d4f6a7ae0a20f7cc5a4952d730272fc0863">
+<files psalm-version="5.13.1@086b94371304750d1c673315321a55d15fc59015">
   <file src="src/SchemaValidator.php">
-    <MixedArgument occurrences="3">
-      <code>$error['message']</code>
-      <code>$error['pointer']</code>
+    <MixedArgument>
+      <code><![CDATA[$error['message']]]></code>
+      <code><![CDATA[$error['pointer']]]></code>
       <code>$schemaDecoded</code>
     </MixedArgument>
-    <MixedAssignment occurrences="2">
+    <MixedAssignment>
       <code>$jsonDecoded</code>
       <code>$schemaDecoded</code>
     </MixedAssignment>
