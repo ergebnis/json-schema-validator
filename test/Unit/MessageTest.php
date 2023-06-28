@@ -13,19 +13,14 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
+use Ergebnis\DataProvider;
 use Ergebnis\Json\SchemaValidator\Message;
 use PHPUnit\Framework;
 
-/**
- * @internal
- *
- * @covers \Ergebnis\Json\SchemaValidator\Message
- */
+#[Framework\Attributes\CoversClass(Message::class)]
 final class MessageTest extends Framework\TestCase
 {
-    /**
-     * @dataProvider \Ergebnis\DataProvider\StringProvider::arbitrary()
-     */
+    #[Framework\Attributes\DataProviderExternal(DataProvider\StringProvider::class, 'arbitrary')]
     public function testFromStringReturnsMessage(string $value): void
     {
         $message = Message::fromString($value);

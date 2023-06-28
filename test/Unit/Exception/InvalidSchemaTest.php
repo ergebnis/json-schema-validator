@@ -16,11 +16,7 @@ namespace Ergebnis\Json\SchemaValidator\Test\Unit\Exception;
 use Ergebnis\Json\SchemaValidator\Exception;
 use PHPUnit\Framework;
 
-/**
- * @internal
- *
- * @covers \Ergebnis\Json\SchemaValidator\Exception\InvalidSchema
- */
+#[Framework\Attributes\CoversClass(Exception\InvalidSchema::class)]
 final class InvalidSchemaTest extends Framework\TestCase
 {
     public function testNotAnOjectReturnsException(): void

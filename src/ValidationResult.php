@@ -23,7 +23,7 @@ final class ValidationResult
      *
      * @var array<int, ValidationError>
      */
-    private array $errors;
+    private readonly array $errors;
 
     private function __construct(ValidationError ...$errors)
     {
