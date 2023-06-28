@@ -2,7 +2,6 @@
 
 [![Integrate](https://github.com/ergebnis/json-schema-validator/workflows/Integrate/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
 [![Merge](https://github.com/ergebnis/json-schema-validator/workflows/Merge/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
-[![Prune](https://github.com/ergebnis/json-schema-validator/workflows/Prune/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
 [![Release](https://github.com/ergebnis/json-schema-validator/workflows/Release/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
 [![Renew](https://github.com/ergebnis/json-schema-validator/workflows/Renew/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
 
@@ -11,6 +10,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/json-schema-validator/v/stable)](https://packagist.org/packages/ergebnis/json-schema-validator)
 [![Total Downloads](https://poser.pugx.org/ergebnis/json-schema-validator/downloads)](https://packagist.org/packages/ergebnis/json-schema-validator)
+[![Monthly Downloads](http://poser.pugx.org/ergebnis/json-schema-validator/d/monthly)](https://packagist.org/packages/ergebnis/json-schema-validator)
 
 Provides a JSON schema validator, building on top of [`justinrainbow/json-schema`](https://github.com/justinrainbow/json-schema).
 
@@ -69,6 +69,10 @@ Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/main/CODE_OF_CONDUCT.md).
 
+## Security Policy
+
+Please have a look at [`SECURITY.md`](.github/SECURITY.md).
+
 ## License
 
 This package is licensed using the MIT License.
@@ -77,4 +81,4 @@ Please have a look at [`LICENSE.md`](LICENSE.md).
 
 ## Curious what I am up to?
 
-Follow me on [Twitter](https://twitter.com/localheinz)!
+Follow me on [Twitter](https://twitter.com/intent/follow?screen_name=localheinz)!
