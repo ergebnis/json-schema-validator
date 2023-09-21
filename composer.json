@@ -18,7 +18,8 @@
   "homepage": "https://github.com/ergebnis/json-schema-validator",
   "support": {
     "issues": "https://github.com/ergebnis/json-schema-validator/issues",
-    "source": "https://github.com/ergebnis/json-schema-validator"
+    "source": "https://github.com/ergebnis/json-schema-validator",
+    "security": "https://github.com/ergebnis/json-schema-validator/blob/main/.github/SECURITY.md"
   },
   "require": {
     "php": "~8.1.0 || ~8.2.0",
