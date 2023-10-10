@@ -12,7 +12,7 @@
 [![Total Downloads](https://poser.pugx.org/ergebnis/json-schema-validator/downloads)](https://packagist.org/packages/ergebnis/json-schema-validator)
 [![Monthly Downloads](http://poser.pugx.org/ergebnis/json-schema-validator/d/monthly)](https://packagist.org/packages/ergebnis/json-schema-validator)
 
-Provides a JSON schema validator, building on top of [`justinrainbow/json-schema`](https://github.com/justinrainbow/json-schema).
+This package provides a JSON schema validator, building on top of [`justinrainbow/json-schema`](https://github.com/justinrainbow/json-schema).
 
 ## Installation
 
@@ -59,26 +59,36 @@ var_dump($result->errors());  // flat list of `ValidationError` value objects
 
 ## Changelog
 
-Please have a look at [`CHANGELOG.md`](CHANGELOG.md).
+The maintainers of this package record notable changes to this project in a [changelog](CHANGELOG.md).
 
 ## Contributing
 
-Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
+The maintainers of this package suggest following the [contribution guide](.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 
-Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/main/CODE_OF_CONDUCT.md).
+The maintainers of this package ask contributors to follow the [code of conduct](https://github.com/ergebnis/.github/blob/main/CODE_OF_CONDUCT.md).
+
+## General Support Policy
+
+The maintainers of this package provide limited support.
+
+You can support the maintenance of this package by [sponsoring @localheinz](https://github.com/sponsors/localheinz) or [requesting an invoice for services related to this package](mailto:am@localheinz.com?subject=ergebnis/json-schema-validator:%20Requesting%20invoice%20for%20services).
+
+## PHP Version Support Policy
+
+This package supports PHP versions with [active support](https://www.php.net/supported-versions.php).
+
+The maintainers of this package add support for a PHP version following its initial release and drop support for a PHP version when it has reached its end of active support.
 
 ## Security Policy
 
-Please have a look at [`SECURITY.md`](.github/SECURITY.md).
+This package has a [security policy](.github/SECURITY.md).
 
 ## License
 
-This package is licensed using the MIT License.
+This package uses the [MIT license](LICENSE.md).
 
-Please have a look at [`LICENSE.md`](LICENSE.md).
+## Social
 
-## Curious what I am up to?
-
-Follow me on [Twitter](https://twitter.com/intent/follow?screen_name=localheinz)!
+Follow [@localheinz](https://twitter.com/intent/follow?screen_name=localheinz) and [@ergebnis](https://twitter.com/intent/follow?screen_name=ergebnis) on Twitter.
