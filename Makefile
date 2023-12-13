@@ -1,15 +1,19 @@
 .PHONY: it
 it: refactoring coding-standards security-analysis static-code-analysis tests ## Runs the refactoring, coding-standards, security-analysis, static-code-analysis, and tests targets
 
+.PHONY: backward-compatibility-analysis
+backward-compatibility-analysis: vendor ## Runs a backward-compatibility analysis with roave/backward-compatibility-check
+	vendor/bin/roave-backward-compatibility-check --from=1902cc2
+
 .PHONY: code-coverage
 code-coverage: vendor ## Collects coverage from running unit tests with phpunit/phpunit
 	mkdir -p .build/phpunit/
 	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml --coverage-text
 
 .PHONY: coding-standards
-coding-standards: vendor ## Lints YAML files with yamllint, normalizes composer.json with ergebnis/composer-normalize, and fixes code style issues with friendsofphp/php-cs-fixer
+coding-standards: phive vendor ## Lints YAML files with yamllint, normalizes composer.json with ergebnis/composer-normalize, and fixes code style issues with friendsofphp/php-cs-fixer
 	yamllint -c .yamllint.yaml --strict .
-	composer normalize
+	.phive/composer-normalize
 	mkdir -p .build/php-cs-fixer/
 	vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose
 
@@ -29,7 +33,7 @@ mutation-tests: vendor ## Runs mutation tests with infection/infection
 .PHONY: phive
 phive: .phive ## Installs dependencies with phive
 	mkdir -p .build/phive/
-	PHIVE_HOME=.build/phive phive install --trust-gpg-keys 0x033E5F8D801A2F8D
+	PHIVE_HOME=.build/phive phive install --trust-gpg-keys 0xC00543248C87FB13,0x033E5F8D801A2F8D
 
 .PHONY: refactoring
 refactoring: vendor ## Runs automated refactoring with rector/rector
