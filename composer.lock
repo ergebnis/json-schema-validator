@@ -4,36 +4,37 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d56d5d46b0101846cbba4f1b1fb117ce",
+    "content-hash": "ac45d9a1d3b70eafc33877b54ed5059f",
     "packages": [
         {
             "name": "ergebnis/json",
-            "version": "1.0.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json.git",
-                "reference": "d66ea30060856d0729a4aa319a02752519ca63a0"
+                "reference": "a457f25a5ba7ea11fc94f84d53678c5211abfce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json/zipball/d66ea30060856d0729a4aa319a02752519ca63a0",
-                "reference": "d66ea30060856d0729a4aa319a02752519ca63a0",
+                "url": "https://api.github.com/repos/ergebnis/json/zipball/a457f25a5ba7ea11fc94f84d53678c5211abfce0",
+                "reference": "a457f25a5ba7ea11fc94f84d53678c5211abfce0",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.0"
+                "ext-json": "*",
+                "php": "~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.29.0",
-                "ergebnis/data-provider": "^1.2.0",
-                "ergebnis/license": "^2.1.0",
-                "ergebnis/php-cs-fixer-config": "^5.0.0",
-                "ergebnis/phpstan-rules": "^1.0.0",
-                "fakerphp/faker": "^1.20.0",
-                "infection/infection": "~0.26.16",
-                "phpunit/phpunit": "^9.5.27",
+                "ergebnis/data-provider": "^3.2.0",
+                "ergebnis/license": "^2.4.0",
+                "ergebnis/php-cs-fixer-config": "^6.20.0",
+                "ergebnis/phpunit-slow-test-detector": "^2.9.0",
+                "fakerphp/faker": "^1.23.1",
+                "infection/infection": "~0.26.6",
+                "phpunit/phpunit": "^9.6.16",
                 "psalm/plugin-phpunit": "~0.18.4",
-                "vimeo/psalm": "^5.1.0"
+                "rector/rector": "~0.19.2",
+                "vimeo/psalm": "^5.20.0"
             },
             "type": "library",
             "extra": {
@@ -54,7 +55,8 @@
             "authors": [
                 {
                     "name": "Andreas Möller",
-                    "email": "am@localheinz.com"
+                    "email": "am@localheinz.com",
+                    "homepage": "https://localheinz.com"
                 }
             ],
             "description": "Provides a Json value object for representing a valid JSON string.",
@@ -64,9 +66,10 @@
             ],
             "support": {
                 "issues": "https://github.com/ergebnis/json/issues",
+                "security": "https://github.com/ergebnis/json/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/json"
             },
-            "time": "2022-12-10T22:38:50+00:00"
+            "time": "2024-01-29T15:09:24+00:00"
         },
         {
             "name": "ergebnis/json-pointer",
@@ -6042,5 +6045,5 @@
     "platform-overrides": {
         "php": "8.0.30"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
