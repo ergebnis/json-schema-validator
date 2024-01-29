@@ -17,10 +17,14 @@ use Ergebnis\DataProvider;
 use Ergebnis\Json\SchemaValidator\Message;
 use PHPUnit\Framework;
 
-#[Framework\Attributes\CoversClass(Message::class)]
+/**
+ * @covers \Ergebnis\Json\SchemaValidator\Message
+ */
 final class MessageTest extends Framework\TestCase
 {
-    #[Framework\Attributes\DataProviderExternal(DataProvider\StringProvider::class, 'arbitrary')]
+    /**
+     * @dataProvider \Ergebnis\DataProvider\StringProvider::arbitrary
+     */
     public function testFromStringReturnsMessage(string $value): void
     {
         $message = Message::fromString($value);

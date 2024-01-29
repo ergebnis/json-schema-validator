@@ -17,7 +17,9 @@ use Ergebnis\Json\Pointer;
 use Ergebnis\Json\SchemaValidator\Exception;
 use PHPUnit\Framework;
 
-#[Framework\Attributes\CoversClass(Exception\CanNotResolve::class)]
+/**
+ * @covers \Ergebnis\Json\SchemaValidator\Exception\CanNotResolve
+ */
 final class CanNotResolveTest extends Framework\TestCase
 {
     public function testJsonPointerReturnsException(): void

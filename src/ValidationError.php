@@ -21,8 +21,8 @@ use Ergebnis\Json\Pointer;
 final class ValidationError
 {
     private function __construct(
-        private readonly Pointer\JsonPointer $jsonPointer,
-        private readonly Message $message,
+        private Pointer\JsonPointer $jsonPointer,
+        private Message $message,
     ) {
     }
 

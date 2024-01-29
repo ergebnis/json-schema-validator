@@ -18,7 +18,7 @@ namespace Ergebnis\Json\SchemaValidator;
  */
 final class Message
 {
-    private function __construct(private readonly string $value)
+    private function __construct(private string $value)
     {
     }
 

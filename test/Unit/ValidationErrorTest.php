@@ -19,8 +19,11 @@ use Ergebnis\Json\SchemaValidator\Test;
 use Ergebnis\Json\SchemaValidator\ValidationError;
 use PHPUnit\Framework;
 
-#[Framework\Attributes\CoversClass(ValidationError::class)]
-#[Framework\Attributes\UsesClass(Message::class)]
+/**
+ * @covers \Ergebnis\Json\SchemaValidator\ValidationError
+ *
+ * @uses \Ergebnis\Json\SchemaValidator\Message
+ */
 final class ValidationErrorTest extends Framework\TestCase
 {
     use Test\Util\Helper;
