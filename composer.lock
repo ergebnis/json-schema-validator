@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "144af37e23a52daf77a216e81d212db4",
+    "content-hash": "15e1cc7bcb1ff3c51d93982e5a4baae1",
     "packages": [
         {
             "name": "ergebnis/json",
@@ -3077,16 +3077,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "0.19.2",
+            "version": "0.19.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "bc96a99895bf47c6bfe70ea1b799f0081ed5a903"
+                "reference": "0d3dcc384284aff5f865480186a620166af6d031"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/bc96a99895bf47c6bfe70ea1b799f0081ed5a903",
-                "reference": "bc96a99895bf47c6bfe70ea1b799f0081ed5a903",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/0d3dcc384284aff5f865480186a620166af6d031",
+                "reference": "0d3dcc384284aff5f865480186a620166af6d031",
                 "shasum": ""
             },
             "require": {
@@ -3121,7 +3121,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/0.19.2"
+                "source": "https://github.com/rectorphp/rector/tree/0.19.4"
             },
             "funding": [
                 {
@@ -3129,7 +3129,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-19T10:58:30+00:00"
+            "time": "2024-01-29T21:18:03+00:00"
         },
         {
             "name": "sanmai/later",
@@ -6142,5 +6142,5 @@
     "platform-overrides": {
         "php": "7.4.33"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
