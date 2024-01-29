@@ -1,3 +1,9 @@
 {
-  "symbol-whitelist": []
+  "symbol-whitelist": [
+    "array",
+    "bool",
+    "false",
+    "self",
+    "string"
+  ]
 }

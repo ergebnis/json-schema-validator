@@ -13,6 +13,7 @@ For a full diff see [`4.1.0...main`][4.1.0...main].
 - Added support for PHP 8.0 ([#521]), by [@localheinz]
 - Required `ergebnis/json:^1.2.0` ([#522]), by [@localheinz]
 - Required `ergebnis/json-pointer:^3.4.0` ([#523]), by [@localheinz]
+- Added support for PHP 7.4 ([#524]), by [@localheinz]
 
 ## [`4.1.0`][4.1.0]
 
@@ -140,5 +141,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#521]: https://github.com/ergebnis/json-schema-validator/pull/521
 [#522]: https://github.com/ergebnis/json-schema-validator/pull/522
 [#523]: https://github.com/ergebnis/json-schema-validator/pull/523
+[#524]: https://github.com/ergebnis/json-schema-validator/pull/524
 
 [@localheinz]: https://github.com/localheinz
