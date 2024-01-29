@@ -20,15 +20,20 @@ use Ergebnis\Json\Pointer;
  */
 final class ValidationError
 {
+    private Pointer\JsonPointer $jsonPointer;
+    private Message $message;
+
     private function __construct(
-        private Pointer\JsonPointer $jsonPointer,
-        private Message $message,
+        Pointer\JsonPointer $jsonPointer,
+        Message $message
     ) {
+        $this->message = $message;
+        $this->jsonPointer = $jsonPointer;
     }
 
     public static function create(
         Pointer\JsonPointer $jsonPointer,
-        Message $message,
+        Message $message
     ): self {
         return new self(
             $jsonPointer,

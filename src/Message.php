@@ -18,8 +18,11 @@ namespace Ergebnis\Json\SchemaValidator;
  */
 final class Message
 {
-    private function __construct(private string $value)
+    private string $value;
+
+    private function __construct(string $value)
     {
+        $this->value = $value;
     }
 
     public static function fromString(string $value): self
