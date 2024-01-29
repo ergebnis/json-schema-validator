@@ -25,7 +25,7 @@
     "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
     "ext-json": "*",
     "ergebnis/json": "^1.2.0",
-    "ergebnis/json-pointer": "^3.2.0",
+    "ergebnis/json-pointer": "^3.4.0",
     "justinrainbow/json-schema": "^5.2.12"
   },
   "require-dev": {
