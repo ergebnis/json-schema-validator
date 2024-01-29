@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="5.18.0@b113f3ed0259fd6e212d87c3df80eec95a6abf19">
+<files psalm-version="5.20.0@3f284e96c9d9be6fe6b15c79416e1d1903dcfef4">
   <file src="src/SchemaValidator.php">
     <MixedArgument>
-      <code><![CDATA[$error['message']]]></code>
-      <code><![CDATA[$error['pointer']]]></code>
+      <code>$error['message']</code>
+      <code>$error['pointer']</code>
       <code>$schemaDecoded</code>
     </MixedArgument>
     <MixedAssignment>

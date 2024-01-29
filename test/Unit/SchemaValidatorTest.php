@@ -20,14 +20,16 @@ use Ergebnis\Json\SchemaValidator\Message;
 use Ergebnis\Json\SchemaValidator\SchemaValidator;
 use Ergebnis\Json\SchemaValidator\Test;
 use Ergebnis\Json\SchemaValidator\ValidationError;
-use Ergebnis\Json\SchemaValidator\ValidationResult;
 use PHPUnit\Framework;
 
-#[Framework\Attributes\CoversClass(SchemaValidator::class)]
-#[Framework\Attributes\UsesClass(Exception\CanNotResolve::class)]
-#[Framework\Attributes\UsesClass(Message::class)]
-#[Framework\Attributes\UsesClass(ValidationError::class)]
-#[Framework\Attributes\UsesClass(ValidationResult::class)]
+/**
+ * @covers \Ergebnis\Json\SchemaValidator\SchemaValidator
+ *
+ * @uses \Ergebnis\Json\SchemaValidator\Exception\CanNotResolve
+ * @uses \Ergebnis\Json\SchemaValidator\Message
+ * @uses \Ergebnis\Json\SchemaValidator\ValidationError
+ * @uses \Ergebnis\Json\SchemaValidator\ValidationResult
+ */
 final class SchemaValidatorTest extends Framework\TestCase
 {
     use Test\Util\Helper;
