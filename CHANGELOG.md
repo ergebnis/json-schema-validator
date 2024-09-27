@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`4.2.0...main`][4.2.0...main].
 
+### Changed
+
+- Allowed installation on PHP 8.4 ([#610]), by [@localheinz]
+
 ## [`4.2.0`][4.2.0]
 
 For a full diff see [`4.1.0...4.2.0`][4.1.0...4.2.0].
@@ -148,5 +152,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#522]: https://github.com/ergebnis/json-schema-validator/pull/522
 [#523]: https://github.com/ergebnis/json-schema-validator/pull/523
 [#524]: https://github.com/ergebnis/json-schema-validator/pull/524
+[#610]: https://github.com/ergebnis/json-schema-validator/pull/610
 
 [@localheinz]: https://github.com/localheinz
