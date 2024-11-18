@@ -6,7 +6,6 @@
 [![Renew](https://github.com/ergebnis/json-schema-validator/workflows/Renew/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
 
 [![Code Coverage](https://codecov.io/gh/ergebnis/json-schema-validator/branch/main/graph/badge.svg)](https://codecov.io/gh/ergebnis/json-schema-validator)
-[![Type Coverage](https://shepherd.dev/github/ergebnis/json-schema-validator/coverage.svg)](https://shepherd.dev/github/ergebnis/json-schema-validator)
 
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/json-schema-validator/v/stable)](https://packagist.org/packages/ergebnis/json-schema-validator)
 [![Total Downloads](https://poser.pugx.org/ergebnis/json-schema-validator/downloads)](https://packagist.org/packages/ergebnis/json-schema-validator)
