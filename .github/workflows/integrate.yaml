@@ -483,7 +483,7 @@ jobs:
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
       - name: "Remove incompatible dependencies with composer"
-        run: "composer remove ergebnis/composer-normalize ergebnis/json-normalizer infection/infection roave/backward-compatibility-check --ansi --dev --no-interaction --no-progress"
+        run: "composer remove ergebnis/composer-normalize ergebnis/json-normalizer infection/infection --ansi --dev --no-interaction --no-progress"
 
       - name: "Remove platform configuration with composer"
         if: "matrix.dependencies != 'locked'"
