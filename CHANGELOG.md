@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`4.3.0...main`][4.3.0...main].
+For a full diff see [`4.4.0...main`][4.4.0...main].
+
+## [`4.4.0`][4.4.0]
+
+For a full diff see [`4.3.0...4.4.0`][4.3.0...4.4.0].
 
 ### Added
 
@@ -125,6 +129,7 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [4.1.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/4.1.0
 [4.2.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/4.2.0
 [4.3.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/4.3.0
+[4.4.0]: https://github.com/ergebnis/json-schema-validator/releases/tag/4.4.0
 
 [dcd4cfb...1.0.0]: https://github.com/ergebnis/json-schema-validator/compare/dcd4cfb...1.0.0
 [1.0.0...2.0.0]: https://github.com/ergebnis/json-schema-validator/compare/1.0.0...2.0.0
@@ -135,7 +140,8 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [4.0.0...4.1.0]: https://github.com/ergebnis/json-schema-validator/compare/4.0.0...4.1.0
 [4.1.0...4.2.0]: https://github.com/ergebnis/json-schema-validator/compare/4.1.0...4.2.0
 [4.2.0...4.3.0]: https://github.com/ergebnis/json-schema-validator/compare/4.2.0...4.3.0
-[4.3.0...main]: https://github.com/ergebnis/json-schema-validator/compare/4.3.0...main
+[4.3.0...4.4.0]: https://github.com/ergebnis/json-schema-validator/compare/4.3.0...4.4.0
+[4.4.0...main]: https://github.com/ergebnis/json-schema-validator/compare/4.4.0...main
 
 [#2]: https://github.com/ergebnis/json-schema-validator/pull/2
 [#3]: https://github.com/ergebnis/json-schema-validator/pull/3
