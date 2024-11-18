@@ -1,0 +1,17 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^PHPDoc tag @var for variable \\$originalErrors has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/SchemaValidator.php
+
+		-
+			message: "#^Parameter \\#1 \\$jsonSchema of method JsonSchema\\\\Uri\\\\UriRetriever\\:\\:resolvePointer\\(\\) expects object, mixed given\\.$#"
+			count: 1
+			path: src/SchemaValidator.php
+
+		-
+			message: "#^Parameter \\#1 \\$encoded of static method Ergebnis\\\\Json\\\\Json\\:\\:fromString\\(\\) expects string, string\\|false given\\.$#"
+			count: 10
+			path: test/Unit/SchemaValidatorTest.php
+
