@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`4.5.0...main`][4.5.0...main].
 
+### Added
+
+- Added support for PHP 8.5 ([#660]), by [@localheinz]
+
 ## [`4.5.0`][4.5.0]
 
 For a full diff see [`4.4.0...4.5.0`][4.4.0...4.5.0].
@@ -186,5 +190,6 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#632]: https://github.com/ergebnis/json-schema-validator/pull/632
 [#633]: https://github.com/ergebnis/json-schema-validator/pull/633
 [#656]: https://github.com/ergebnis/json-schema-validator/pull/656
+[#660]: https://github.com/ergebnis/json-schema-validator/pull/660
 
 [@localheinz]: https://github.com/localheinz
