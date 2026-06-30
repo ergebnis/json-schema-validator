@@ -58,7 +58,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -131,7 +131,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -146,7 +146,7 @@ jobs:
         run: "composer normalize --ansi --dry-run"
 
       - name: "Cache cache directory for friendsofphp/php-cs-fixer"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: ".build/php-cs-fixer"
           key: "php-${{ matrix.php-version }}-php-cs-fixer-${{ github.ref_name }}"
@@ -202,7 +202,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -288,7 +288,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -348,7 +348,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -360,7 +360,7 @@ jobs:
           dependencies: "${{ matrix.dependencies }}"
 
       - name: "Cache cache directory for rector/rector"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: ".build/rector"
           key: "php-${{ matrix.php-version }}-rector-${{ github.ref_name }}"
@@ -415,7 +415,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -473,7 +473,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -543,7 +543,7 @@ jobs:
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@4103ff7c010d2c18dc84f72d6704227868412482" # 1.10.0
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@8b402f58fbc84540c8b491a91e594a4576fec3d7" # v5.0.2
+        uses: "actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9" # v6.1.0
         with:
           path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
