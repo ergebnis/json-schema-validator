@@ -47,6 +47,6 @@ jobs:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
 
       - name: "Merge pull request"
-        uses: "ergebnis/.github/actions/github/pull-request/merge@fa753ba19f89b4923380b19dfcd80ad7eca4def9" # 1.13.0
+        uses: "ergebnis/.github/actions/github/pull-request/merge@d8504dd0a4ef84e8afebdba5b1a4694d02ea687f" # 1.13.3
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
