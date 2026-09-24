@@ -190,6 +190,7 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#203]: https://github.com/ergebnis/json-schema-validator/pull/203
 [#226]: https://github.com/ergebnis/json-schema-validator/pull/226
 [#282]: https://github.com/ergebnis/json-schema-validator/pull/282
+[#292]: https://github.com/ergebnis/json-schema-validator/pull/292
 [#388]: https://github.com/ergebnis/json-schema-validator/pull/388
 [#450]: https://github.com/ergebnis/json-schema-validator/pull/450
 [#521]: https://github.com/ergebnis/json-schema-validator/pull/521
@@ -203,4 +204,5 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#660]: https://github.com/ergebnis/json-schema-validator/pull/660
 [#661]: https://github.com/ergebnis/json-schema-validator/pull/661
 
+[@dependabot]: https://github.com/dependabot
 [@localheinz]: https://github.com/localheinz
