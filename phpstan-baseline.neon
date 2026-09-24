@@ -1,17 +1,38 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^PHPDoc tag @var for variable \\$originalErrors has no value type specified in iterable type array\\.$#"
+			message: '#^PHPDoc tag @var for variable \$originalErrors has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/SchemaValidator.php
 
 		-
-			message: "#^Parameter \\#1 \\$jsonSchema of method JsonSchema\\\\Uri\\\\UriRetriever\\:\\:resolvePointer\\(\\) expects object, mixed given\\.$#"
+			message: '#^Parameter \#1 \$jsonSchema of method JsonSchema\\Uri\\UriRetriever\:\:resolvePointer\(\) expects object, mixed given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/SchemaValidator.php
 
 		-
-			message: "#^Parameter \\#1 \\$encoded of static method Ergebnis\\\\Json\\\\Json\\:\\:fromString\\(\\) expects string, string\\|false given\\.$#"
+			message: '#^Parameter \#1 \$value of static method Ergebnis\\Json\\Pointer\\JsonPointer\:\:fromJsonString\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/SchemaValidator.php
+
+		-
+			message: '#^Parameter \#1 \$value of static method Ergebnis\\Json\\SchemaValidator\\Message\:\:fromString\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/SchemaValidator.php
+
+		-
+			message: '#^Parameter \#1 \$array \(list\<Ergebnis\\Json\\SchemaValidator\\ValidationError\>\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 1
+			path: src/ValidationResult.php
+
+		-
+			message: '#^Parameter \#1 \$encoded of static method Ergebnis\\Json\\Json\:\:fromString\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
 			count: 10
 			path: test/Unit/SchemaValidatorTest.php
 
