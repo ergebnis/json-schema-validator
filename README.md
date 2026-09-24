@@ -9,7 +9,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/json-schema-validator/v/stable)](https://packagist.org/packages/ergebnis/json-schema-validator)
 [![Total Downloads](https://poser.pugx.org/ergebnis/json-schema-validator/downloads)](https://packagist.org/packages/ergebnis/json-schema-validator)
-[![Monthly Downloads](http://poser.pugx.org/ergebnis/json-schema-validator/d/monthly)](https://packagist.org/packages/ergebnis/json-schema-validator)
+[![Monthly Downloads](https://poser.pugx.org/ergebnis/json-schema-validator/d/monthly)](https://packagist.org/packages/ergebnis/json-schema-validator)
 
 This project provides a [`composer`](https://getcomposer.org) package with a JSON schema validator, building on top of [`justinrainbow/json-schema`](https://github.com/justinrainbow/json-schema).
 
