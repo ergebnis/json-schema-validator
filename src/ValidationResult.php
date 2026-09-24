@@ -41,9 +41,9 @@ final class ValidationResult
     }
 
     /**
-     * @psalm-return list<ValidationError>
-     *
      * @return array<int, ValidationError>
+     *
+     * @psalm-return list<ValidationError>
      */
     public function errors(): array
     {
