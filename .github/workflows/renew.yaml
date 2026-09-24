@@ -44,7 +44,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@f5048b197f24b30496f4989821523d688959fbc3" # 1.13.1
+        uses: "ergebnis/.github/actions/composer/determine-root-version@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
 
       - name: "Determine composer cache directory"
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@d8504dd0a4ef84e8afebdba5b1a4694d02ea687f" # 1.13.3
