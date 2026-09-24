@@ -13,9 +13,6 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator;
 
-/**
- * @psalm-immutable
- */
 final class Message
 {
     private string $value;

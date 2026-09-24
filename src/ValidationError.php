@@ -15,9 +15,6 @@ namespace Ergebnis\Json\SchemaValidator;
 
 use Ergebnis\Json\Pointer;
 
-/**
- * @psalm-immutable
- */
 final class ValidationError
 {
     private Pointer\JsonPointer $jsonPointer;

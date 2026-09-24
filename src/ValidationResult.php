@@ -13,15 +13,10 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator;
 
-/**
- * @psalm-immutable
- */
 final class ValidationResult
 {
     /**
-     * @psalm-var list<ValidationError>
-     *
-     * @var array<int, ValidationError>
+     * @var list<ValidationError>
      */
     private array $errors;
 
@@ -41,9 +36,7 @@ final class ValidationResult
     }
 
     /**
-     * @return array<int, ValidationError>
-     *
-     * @psalm-return list<ValidationError>
+     * @return list<ValidationError>
      */
     public function errors(): array
     {
