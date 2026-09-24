@@ -1,9 +1,9 @@
 # json-schema-validator
 
-[![Integrate](https://github.com/ergebnis/json-schema-validator/workflows/Integrate/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
-[![Merge](https://github.com/ergebnis/json-schema-validator/workflows/Merge/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
-[![Release](https://github.com/ergebnis/json-schema-validator/workflows/Release/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
-[![Renew](https://github.com/ergebnis/json-schema-validator/workflows/Renew/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions)
+[![Integrate](https://github.com/ergebnis/json-schema-validator/actions/workflows/integrate.yaml/badge.svg?branch=main)](https://github.com/ergebnis/json-schema-validator/actions/workflows/integrate.yaml)
+[![Merge](https://github.com/ergebnis/json-schema-validator/actions/workflows/merge.yaml/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions/workflows/merge.yaml)
+[![Release](https://github.com/ergebnis/json-schema-validator/actions/workflows/release.yaml/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions/workflows/release.yaml)
+[![Renew](https://github.com/ergebnis/json-schema-validator/actions/workflows/renew.yaml/badge.svg)](https://github.com/ergebnis/json-schema-validator/actions/workflows/renew.yaml)
 
 [![Code Coverage](https://codecov.io/gh/ergebnis/json-schema-validator/branch/main/graph/badge.svg)](https://codecov.io/gh/ergebnis/json-schema-validator)
 
