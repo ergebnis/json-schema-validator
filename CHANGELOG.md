@@ -12,6 +12,10 @@ For a full diff see [`4.5.1...main`][4.5.1...main].
 
 - Added support for PHP 8.5 ([#660]), by [@localheinz]
 
+### Changed
+
+- Allowed installation on PHP 8.6 ([#749]), by [@localheinz]
+
 ## [`4.5.1`][4.5.1]
 
 For a full diff see [`4.5.0...4.5.1`][4.5.0...4.5.1].
@@ -203,6 +207,7 @@ For a full diff see [`dcd4cfb...1.0.0`][dcd4cfb...1.0.0].
 [#656]: https://github.com/ergebnis/json-schema-validator/pull/656
 [#660]: https://github.com/ergebnis/json-schema-validator/pull/660
 [#661]: https://github.com/ergebnis/json-schema-validator/pull/661
+[#749]: https://github.com/ergebnis/json-schema-validator/pull/749
 
 [@dependabot]: https://github.com/dependabot
 [@localheinz]: https://github.com/localheinz
