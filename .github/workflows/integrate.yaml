@@ -52,7 +52,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@f5048b197f24b30496f4989821523d688959fbc3" # 1.13.1
+        uses: "ergebnis/.github/actions/composer/determine-root-version@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
 
       - name: "Determine composer cache directory"
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
@@ -126,7 +126,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@f5048b197f24b30496f4989821523d688959fbc3" # 1.13.1
+        uses: "ergebnis/.github/actions/composer/determine-root-version@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
 
       - name: "Determine composer cache directory"
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
@@ -202,7 +202,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@f5048b197f24b30496f4989821523d688959fbc3" # 1.13.1
+        uses: "ergebnis/.github/actions/composer/determine-root-version@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
 
       - name: "Determine composer cache directory"
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
@@ -288,7 +288,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@f5048b197f24b30496f4989821523d688959fbc3" # 1.13.1
+        uses: "ergebnis/.github/actions/composer/determine-root-version@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
 
       - name: "Determine composer cache directory"
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
@@ -348,7 +348,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@f5048b197f24b30496f4989821523d688959fbc3" # 1.13.1
+        uses: "ergebnis/.github/actions/composer/determine-root-version@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
 
       - name: "Determine composer cache directory"
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
@@ -415,7 +415,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@f5048b197f24b30496f4989821523d688959fbc3" # 1.13.1
+        uses: "ergebnis/.github/actions/composer/determine-root-version@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
 
       - name: "Determine composer cache directory"
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
@@ -473,7 +473,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@f5048b197f24b30496f4989821523d688959fbc3" # 1.13.1
+        uses: "ergebnis/.github/actions/composer/determine-root-version@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
 
       - name: "Determine composer cache directory"
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
@@ -543,7 +543,7 @@ jobs:
         run: "composer validate --ansi --strict"
 
       - name: "Determine composer root version"
-        uses: "ergebnis/.github/actions/composer/determine-root-version@f5048b197f24b30496f4989821523d688959fbc3" # 1.13.1
+        uses: "ergebnis/.github/actions/composer/determine-root-version@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
 
       - name: "Determine composer cache directory"
         uses: "ergebnis/.github/actions/composer/determine-cache-directory@07ba5718eac189644381e5972cd671c80c135ae7" # 1.13.4
