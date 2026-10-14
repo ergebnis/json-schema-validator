@@ -25,12 +25,6 @@ parameters:
 			path: src/SchemaValidator.php
 
 		-
-			message: '#^Parameter \#1 \$array \(list\<Ergebnis\\Json\\SchemaValidator\\ValidationError\>\) of array_values is already a list, call has no effect\.$#'
-			identifier: arrayValues.list
-			count: 1
-			path: src/ValidationResult.php
-
-		-
 			message: '#^Parameter \#1 \$encoded of static method Ergebnis\\Json\\Json\:\:fromString\(\) expects string, string\|false given\.$#'
 			identifier: argument.type
 			count: 10
