@@ -4,13 +4,13 @@
 
 The following versions of `ergebnis/json-schema-validator` have active support:
 
-- `^4.6.0`
+- `^4.7.0`
 
 ## Unsupported Versions
 
 The following versions of `ergebnis/json-schema-validator` have reached their end of life:
 
-- `<4.6.0`
+- `<4.7.0`
 
 ## Reporting a Vulnerability
 
