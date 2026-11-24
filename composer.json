@@ -40,7 +40,7 @@
     "phpstan/phpstan": "^2.3.6",
     "phpstan/phpstan-deprecation-rules": "^2.0.6",
     "phpstan/phpstan-phpunit": "^2.1.2",
-    "phpstan/phpstan-strict-rules": "^2.1.1",
+    "phpstan/phpstan-strict-rules": "^2.1.2",
     "phpunit/phpunit": "^9.6.20",
     "rector/rector": "^2.8.4"
   },
