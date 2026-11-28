@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Ergebnis\Json\SchemaValidator\Test\Unit\Exception;
 
-use Ergebnis\Json\SchemaValidator\Exception;
+use Ergebnis\Json\SchemaValidator;
 use PHPUnit\Framework;
 
 /**
@@ -23,7 +23,7 @@ final class InvalidSchemaTest extends Framework\TestCase
 {
     public function testNotAnOjectReturnsException(): void
     {
-        $exception = Exception\InvalidSchema::notAnObject();
+        $exception = SchemaValidator\Exception\InvalidSchema::notAnObject();
 
         self::assertSame('Value does not appear to be a valid JSON schema.', $exception->getMessage());
     }

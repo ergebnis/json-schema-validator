@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\DataProvider;
-use Ergebnis\Json\SchemaValidator\Message;
+use Ergebnis\Json\SchemaValidator;
 use PHPUnit\Framework;
 
 /**
@@ -27,7 +27,7 @@ final class MessageTest extends Framework\TestCase
      */
     public function testFromStringReturnsMessage(string $value): void
     {
-        $message = Message::fromString($value);
+        $message = SchemaValidator\Message::fromString($value);
 
         self::assertSame($value, $message->toString());
     }

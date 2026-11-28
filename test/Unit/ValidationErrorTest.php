@@ -14,9 +14,7 @@ declare(strict_types=1);
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\Json\Pointer;
-use Ergebnis\Json\SchemaValidator\Message;
-use Ergebnis\Json\SchemaValidator\Test;
-use Ergebnis\Json\SchemaValidator\ValidationError;
+use Ergebnis\Json\SchemaValidator;
 use PHPUnit\Framework;
 
 /**
@@ -26,14 +24,14 @@ use PHPUnit\Framework;
  */
 final class ValidationErrorTest extends Framework\TestCase
 {
-    use Test\Util\Helper;
+    use SchemaValidator\Test\Util\Helper;
 
     public function testCreateReturnsValidationError(): void
     {
         $jsonPointer = Pointer\JsonPointer::fromUriFragmentIdentifierString('#/foo/bar');
-        $message = Message::fromString(self::faker()->sentence());
+        $message = SchemaValidator\Message::fromString(self::faker()->sentence());
 
-        $validationError = ValidationError::create(
+        $validationError = SchemaValidator\ValidationError::create(
             $jsonPointer,
             $message,
         );
