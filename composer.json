@@ -33,7 +33,7 @@
     "ergebnis/license": "^2.9.0",
     "ergebnis/php-cs-fixer-config": "^6.65.0",
     "ergebnis/phpunit-slow-test-detector": "^2.27.0",
-    "ergebnis/rector-rules": "^1.19.0",
+    "ergebnis/rector-config": "~0.3.1",
     "fakerphp/faker": "^1.24.0",
     "infection/infection": "~0.26.6",
     "phpstan/extension-installer": "^1.4.3",
@@ -41,8 +41,7 @@
     "phpstan/phpstan-deprecation-rules": "^2.0.6",
     "phpstan/phpstan-phpunit": "^2.1.2",
     "phpstan/phpstan-strict-rules": "^2.1.2",
-    "phpunit/phpunit": "^9.6.20",
-    "rector/rector": "^2.8.4"
+    "phpunit/phpunit": "^9.6.20"
   },
   "autoload": {
     "psr-4": {

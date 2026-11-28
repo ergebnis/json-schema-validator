@@ -14,10 +14,7 @@ declare(strict_types=1);
 namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\Json\Pointer;
-use Ergebnis\Json\SchemaValidator\Message;
-use Ergebnis\Json\SchemaValidator\Test;
-use Ergebnis\Json\SchemaValidator\ValidationError;
-use Ergebnis\Json\SchemaValidator\ValidationResult;
+use Ergebnis\Json\SchemaValidator;
 use PHPUnit\Framework;
 
 /**
@@ -28,11 +25,11 @@ use PHPUnit\Framework;
  */
 final class ValidationResultTest extends Framework\TestCase
 {
-    use Test\Util\Helper;
+    use SchemaValidator\Test\Util\Helper;
 
     public function testCreateReturnsValidationResultWithoutErrors(): void
     {
-        $validationResult = ValidationResult::create();
+        $validationResult = SchemaValidator\ValidationResult::create();
 
         self::assertTrue($validationResult->isValid());
         self::assertSame([], $validationResult->errors());
@@ -43,21 +40,21 @@ final class ValidationResultTest extends Framework\TestCase
         $faker = self::faker();
 
         $errors = [
-            ValidationError::create(
+            SchemaValidator\ValidationError::create(
                 Pointer\JsonPointer::fromJsonString('/foo'),
-                Message::fromString($faker->sentence()),
+                SchemaValidator\Message::fromString($faker->sentence()),
             ),
-            ValidationError::create(
+            SchemaValidator\ValidationError::create(
                 Pointer\JsonPointer::fromJsonString('/bar'),
-                Message::fromString($faker->sentence()),
+                SchemaValidator\Message::fromString($faker->sentence()),
             ),
-            ValidationError::create(
+            SchemaValidator\ValidationError::create(
                 Pointer\JsonPointer::fromJsonString('/baz'),
-                Message::fromString($faker->sentence()),
+                SchemaValidator\Message::fromString($faker->sentence()),
             ),
         ];
 
-        $validationResult = ValidationResult::create(...$errors);
+        $validationResult = SchemaValidator\ValidationResult::create(...$errors);
 
         self::assertFalse($validationResult->isValid());
         self::assertSame($errors, $validationResult->errors());

@@ -15,11 +15,7 @@ namespace Ergebnis\Json\SchemaValidator\Test\Unit;
 
 use Ergebnis\Json\Json;
 use Ergebnis\Json\Pointer;
-use Ergebnis\Json\SchemaValidator\Exception;
-use Ergebnis\Json\SchemaValidator\Message;
-use Ergebnis\Json\SchemaValidator\SchemaValidator;
-use Ergebnis\Json\SchemaValidator\Test;
-use Ergebnis\Json\SchemaValidator\ValidationError;
+use Ergebnis\Json\SchemaValidator;
 use PHPUnit\Framework;
 
 /**
@@ -32,7 +28,7 @@ use PHPUnit\Framework;
  */
 final class SchemaValidatorTest extends Framework\TestCase
 {
-    use Test\Util\Helper;
+    use SchemaValidator\Test\Util\Helper;
 
     public function testValidateReturnsResultWhenJsonIsValidAccordingToSchemaAndJsonPointerRefersToDocument(): void
     {
@@ -73,7 +69,7 @@ final class SchemaValidatorTest extends Framework\TestCase
 
         $jsonPointer = Pointer\JsonPointer::document();
 
-        $schemaValidator = new SchemaValidator();
+        $schemaValidator = new SchemaValidator\SchemaValidator();
 
         $result = $schemaValidator->validate(
             $data,
@@ -124,7 +120,7 @@ final class SchemaValidatorTest extends Framework\TestCase
 
         $jsonPointer = Pointer\JsonPointer::document();
 
-        $schemaValidator = new SchemaValidator();
+        $schemaValidator = new SchemaValidator\SchemaValidator();
 
         $result = $schemaValidator->validate(
             $data,
@@ -135,17 +131,17 @@ final class SchemaValidatorTest extends Framework\TestCase
         self::assertFalse($result->isValid());
 
         $expected = [
-            ValidationError::create(
+            SchemaValidator\ValidationError::create(
                 Pointer\JsonPointer::fromJsonString('/foo/bar'),
-                Message::fromString('Integer value found, but a boolean is required'),
+                SchemaValidator\Message::fromString('Integer value found, but a boolean is required'),
             ),
-            ValidationError::create(
+            SchemaValidator\ValidationError::create(
                 Pointer\JsonPointer::fromJsonString('/foo/baz'),
-                Message::fromString('String value found, but an array is required'),
+                SchemaValidator\Message::fromString('String value found, but an array is required'),
             ),
-            ValidationError::create(
+            SchemaValidator\ValidationError::create(
                 Pointer\JsonPointer::document(),
-                Message::fromString('The property qux is not defined and the definition does not allow additional properties'),
+                SchemaValidator\Message::fromString('The property qux is not defined and the definition does not allow additional properties'),
             ),
         ];
 
@@ -189,7 +185,7 @@ final class SchemaValidatorTest extends Framework\TestCase
 
         $jsonPointer = Pointer\JsonPointer::fromUriFragmentIdentifierString('#/properties/foo');
 
-        $schemaValidator = new SchemaValidator();
+        $schemaValidator = new SchemaValidator\SchemaValidator();
 
         $result = $schemaValidator->validate(
             $data,
@@ -237,9 +233,9 @@ final class SchemaValidatorTest extends Framework\TestCase
 
         $jsonPointer = Pointer\JsonPointer::fromUriFragmentIdentifierString('#/properties/qux');
 
-        $schemaValidator = new SchemaValidator();
+        $schemaValidator = new SchemaValidator\SchemaValidator();
 
-        $this->expectException(Exception\CanNotResolve::class);
+        $this->expectException(SchemaValidator\Exception\CanNotResolve::class);
 
         $schemaValidator->validate(
             $data,
@@ -285,7 +281,7 @@ final class SchemaValidatorTest extends Framework\TestCase
 
         $jsonPointer = Pointer\JsonPointer::fromUriFragmentIdentifierString('#/properties/foo');
 
-        $schemaValidator = new SchemaValidator();
+        $schemaValidator = new SchemaValidator\SchemaValidator();
 
         $result = $schemaValidator->validate(
             $data,
@@ -296,13 +292,13 @@ final class SchemaValidatorTest extends Framework\TestCase
         self::assertFalse($result->isValid());
 
         $expected = [
-            ValidationError::create(
+            SchemaValidator\ValidationError::create(
                 Pointer\JsonPointer::fromJsonString('/bar'),
-                Message::fromString('String value found, but a boolean is required'),
+                SchemaValidator\Message::fromString('String value found, but a boolean is required'),
             ),
-            ValidationError::create(
+            SchemaValidator\ValidationError::create(
                 Pointer\JsonPointer::fromJsonString('/baz'),
-                Message::fromString('Boolean value found, but an array is required'),
+                SchemaValidator\Message::fromString('Boolean value found, but an array is required'),
             ),
         ];
 
